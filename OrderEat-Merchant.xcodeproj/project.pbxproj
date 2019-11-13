@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */; };
 		CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */; };
-		CAA60200237BAFDC00EE4497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FF237BAFDC00EE4497 /* ViewController.swift */; };
-		CAA60203237BAFDC00EE4497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60201237BAFDC00EE4497 /* Main.storyboard */; };
 		CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */; };
 		CAA60208237BAFDF00EE4497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA60207237BAFDF00EE4497 /* Assets.xcassets */; };
 		CAA6020B237BAFDF00EE4497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60209237BAFDF00EE4497 /* LaunchScreen.storyboard */; };
 		CAA60216237BAFDF00EE4497 /* OrderEat_MerchantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA60215237BAFDF00EE4497 /* OrderEat_MerchantTests.swift */; };
 		CAA60221237BAFDF00EE4497 /* OrderEat_MerchantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA60220237BAFDF00EE4497 /* OrderEat_MerchantUITests.swift */; };
+		CAA60271237BD82E00EE4497 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60270237BD82E00EE4497 /* OrderList.storyboard */; };
+		CAA60273237BD83E00EE4497 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */; };
+		CAA60277237BD86000EE4497 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60276237BD86000EE4497 /* Signin.storyboard */; };
+		CAA60279237BD90300EE4497 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60278237BD90300EE4497 /* Checkout.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,6 @@
 		CAA601F8237BAFDC00EE4497 /* OrderEat-Merchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Merchant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CAA601FF237BAFDC00EE4497 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CAA60202237BAFDC00EE4497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAA60205237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderEat_Merchant.xcdatamodel; sourceTree = "<group>"; };
 		CAA60207237BAFDF00EE4497 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAA6020A237BAFDF00EE4497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,10 @@
 		CAA6021C237BAFDF00EE4497 /* OrderEat-MerchantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OrderEat-MerchantUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA60220237BAFDF00EE4497 /* OrderEat_MerchantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEat_MerchantUITests.swift; sourceTree = "<group>"; };
 		CAA60222237BAFDF00EE4497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAA60270237BD82E00EE4497 /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		CAA60276237BD86000EE4497 /* Signin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signin.storyboard; sourceTree = "<group>"; };
+		CAA60278237BD90300EE4497 /* Checkout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkout.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,10 @@
 		CAA601FA237BAFDC00EE4497 /* OrderEat-Merchant */ = {
 			isa = PBXGroup;
 			children = (
-				CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */,
-				CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */,
-				CAA601FF237BAFDC00EE4497 /* ViewController.swift */,
-				CAA60201237BAFDC00EE4497 /* Main.storyboard */,
-				CAA60207237BAFDF00EE4497 /* Assets.xcassets */,
-				CAA60209237BAFDF00EE4497 /* LaunchScreen.storyboard */,
+				CAA6025B237BD52100EE4497 /* Main */,
+				CAA6025C237BD54C00EE4497 /* Classes */,
+				CAA6026C237BD57400EE4497 /* Resources */,
 				CAA6020C237BAFDF00EE4497 /* Info.plist */,
-				CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */,
 			);
 			path = "OrderEat-Merchant";
 			sourceTree = "<group>";
@@ -129,6 +129,197 @@
 				CAA60222237BAFDF00EE4497 /* Info.plist */,
 			);
 			path = "OrderEat-MerchantUITests";
+			sourceTree = "<group>";
+		};
+		CAA6025B237BD52100EE4497 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */,
+				CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CAA6025C237BD54C00EE4497 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CAA6025D237BD54C00EE4497 /* Checkout */,
+				CAA60261237BD54C00EE4497 /* LaunchedScreen */,
+				CAA60263237BD54C00EE4497 /* OrderList */,
+				CAA60265237BD54C00EE4497 /* Authentication */,
+				CAA60268237BD54C00EE4497 /* OnBoarding */,
+			);
+			name = Classes;
+			path = "OrderEat-Merchant/Classes";
+			sourceTree = SOURCE_ROOT;
+		};
+		CAA6025D237BD54C00EE4497 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				CAA6025E237BD54C00EE4497 /* ViewModel */,
+				CAA6025F237BD54C00EE4497 /* View */,
+				CAA60260237BD54C00EE4497 /* ViewController */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		CAA6025E237BD54C00EE4497 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAA6025F237BD54C00EE4497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60278237BD90300EE4497 /* Checkout.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAA60260237BD54C00EE4497 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAA60261237BD54C00EE4497 /* LaunchedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60262237BD54C00EE4497 /* ViewController */,
+				CAA6026F237BD5F400EE4497 /* View */,
+			);
+			path = LaunchedScreen;
+			sourceTree = "<group>";
+		};
+		CAA60262237BD54C00EE4497 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAA60263237BD54C00EE4497 /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60264237BD54C00EE4497 /* ViewModel */,
+				CAA6026E237BD5BB00EE4497 /* ViewController */,
+				CAA6026D237BD5B200EE4497 /* View */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		CAA60264237BD54C00EE4497 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAA60265237BD54C00EE4497 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60266237BD54C00EE4497 /* Signin */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CAA60266237BD54C00EE4497 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60267237BD54C00EE4497 /* ViewModel */,
+				CAA60275237BD84E00EE4497 /* ViewController */,
+				CAA60274237BD84500EE4497 /* View */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		CAA60267237BD54C00EE4497 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAA60268237BD54C00EE4497 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60269237BD54C00EE4497 /* ViewModel */,
+				CAA6026B237BD54C00EE4497 /* ViewController */,
+				CAA6026A237BD54C00EE4497 /* View */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		CAA60269237BD54C00EE4497 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAA6026A237BD54C00EE4497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAA6026B237BD54C00EE4497 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAA6026C237BD57400EE4497 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60207237BAFDF00EE4497 /* Assets.xcassets */,
+				CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAA6026D237BD5B200EE4497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60270237BD82E00EE4497 /* OrderList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAA6026E237BD5BB00EE4497 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAA6026F237BD5F400EE4497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60209237BAFDF00EE4497 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAA60274237BD84500EE4497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA60276237BD86000EE4497 /* Signin.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAA60275237BD84E00EE4497 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +426,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA60277237BD86000EE4497 /* Signin.storyboard in Resources */,
 				CAA6020B237BAFDF00EE4497 /* LaunchScreen.storyboard in Resources */,
+				CAA60271237BD82E00EE4497 /* OrderList.storyboard in Resources */,
 				CAA60208237BAFDF00EE4497 /* Assets.xcassets in Resources */,
-				CAA60203237BAFDC00EE4497 /* Main.storyboard in Resources */,
+				CAA60279237BD90300EE4497 /* Checkout.storyboard in Resources */,
+				CAA60273237BD83E00EE4497 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAA60200237BAFDC00EE4497 /* ViewController.swift in Sources */,
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
@@ -301,14 +494,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CAA60201237BAFDC00EE4497 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAA60202237BAFDC00EE4497 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CAA60209237BAFDF00EE4497 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
