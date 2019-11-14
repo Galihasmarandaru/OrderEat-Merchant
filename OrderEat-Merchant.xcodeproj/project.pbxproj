@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72EE237D03D400832704 /* OrderListViewCell.swift */; };
+		0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F0237D048B00832704 /* OrderListViewController.swift */; };
+		0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */; };
+		0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72FC237D203500832704 /* OrderListViewModel.swift */; };
+		0A1C7312237D20E000832704 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C730B237D20E000832704 /* Merchant.swift */; };
+		0A1C7313237D20E000832704 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C730C237D20E000832704 /* Customer.swift */; };
+		0A1C7314237D20E000832704 /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C730D237D20E000832704 /* TransactionDetail.swift */; };
+		0A1C7315237D20E000832704 /* OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C730E237D20E000832704 /* OTP.swift */; };
+		0A1C7316237D20E000832704 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C730F237D20E000832704 /* Transaction.swift */; };
+		0A1C7317237D20E000832704 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C7310237D20E000832704 /* TokenAPI.swift */; };
+		0A1C7318237D20E000832704 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C7311237D20E000832704 /* Menu.swift */; };
 		CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */; };
 		CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */; };
 		CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */; };
@@ -38,6 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1C72EE237D03D400832704 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
+		0A1C72F0237D048B00832704 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		0A1C72FC237D203500832704 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListViewModel.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		0A1C730B237D20E000832704 /* Merchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Merchant.swift; path = "../../../../../.Trash/Model 12-41-16-272/Merchant.swift"; sourceTree = "<group>"; };
+		0A1C730C237D20E000832704 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = "../../../../../.Trash/Model 12-41-16-272/Customer.swift"; sourceTree = "<group>"; };
+		0A1C730D237D20E000832704 /* TransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionDetail.swift; path = "../../../../../.Trash/Model 12-41-16-272/TransactionDetail.swift"; sourceTree = "<group>"; };
+		0A1C730E237D20E000832704 /* OTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTP.swift; path = "../../../../../.Trash/Model 12-41-16-272/OTP.swift"; sourceTree = "<group>"; };
+		0A1C730F237D20E000832704 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = "../../../../../.Trash/Model 12-41-16-272/Transaction.swift"; sourceTree = "<group>"; };
+		0A1C7310237D20E000832704 /* TokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenAPI.swift; path = "../../../../../.Trash/Model 12-41-16-272/TokenAPI.swift"; sourceTree = "<group>"; };
+		0A1C7311237D20E000832704 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = "../../../../../.Trash/Model 12-41-16-272/Menu.swift"; sourceTree = "<group>"; };
 		CAA601F8237BAFDC00EE4497 /* OrderEat-Merchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Merchant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +104,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1C72FE237D20AE00832704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A1C730C237D20E000832704 /* Customer.swift */,
+				0A1C7311237D20E000832704 /* Menu.swift */,
+				0A1C730B237D20E000832704 /* Merchant.swift */,
+				0A1C730E237D20E000832704 /* OTP.swift */,
+				0A1C7310237D20E000832704 /* TokenAPI.swift */,
+				0A1C730F237D20E000832704 /* Transaction.swift */,
+				0A1C730D237D20E000832704 /* TransactionDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CAA601EF237BAFDC00EE4497 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +179,7 @@
 		CAA6025C237BD54C00EE4497 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A1C72FE237D20AE00832704 /* Model */,
 				CAA6025D237BD54C00EE4497 /* Checkout */,
 				CAA60261237BD54C00EE4497 /* LaunchedScreen */,
 				CAA60263237BD54C00EE4497 /* OrderList */,
@@ -214,6 +251,7 @@
 		CAA60264237BD54C00EE4497 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0A1C72FC237D203500832704 /* OrderListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				CAA60270237BD82E00EE4497 /* OrderList.storyboard */,
+				0A1C72EE237D03D400832704 /* OrderListViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +334,8 @@
 		CAA6026E237BD5BB00EE4497 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0A1C72F0237D048B00832704 /* OrderListViewController.swift */,
+				0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -456,9 +497,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1C7317237D20E000832704 /* TokenAPI.swift in Sources */,
+				0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */,
+				0A1C7318237D20E000832704 /* Menu.swift in Sources */,
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
+				0A1C7316237D20E000832704 /* Transaction.swift in Sources */,
+				0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */,
+				0A1C7312237D20E000832704 /* Merchant.swift in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
+				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
+				0A1C7313237D20E000832704 /* Customer.swift in Sources */,
+				0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
+				0A1C7315237D20E000832704 /* OTP.swift in Sources */,
+				0A1C7314237D20E000832704 /* TransactionDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
