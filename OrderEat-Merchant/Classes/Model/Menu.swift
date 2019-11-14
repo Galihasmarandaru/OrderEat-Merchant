@@ -46,6 +46,11 @@ class Menu : Codable {
         case image
     }
     
+    init(name: String, price: Int) {
+        self.name = name
+        self.price = price
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)

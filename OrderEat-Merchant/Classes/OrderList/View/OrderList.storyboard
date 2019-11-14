@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bii-T1-EZb">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,6 +105,7 @@
                                             <outlet property="orderPrice" destination="kH8-uM-Vbd" id="57y-Uc-ouz"/>
                                             <outlet property="orderStatus" destination="6bo-0A-e22" id="sip-Ia-iRd"/>
                                             <outlet property="pickUpTime" destination="wyT-Bj-p7U" id="uFj-Pr-tCh"/>
+                                            <segue destination="qW7-bh-yGg" kind="show" id="vwA-Sv-Q1Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,6 +315,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3p-Nw-Q1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1566" y="-1182"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="6eY-yZ-W13">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Checkout" id="qW7-bh-yGg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KBN-cw-Kio"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfI-1r-pXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="-1235"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
