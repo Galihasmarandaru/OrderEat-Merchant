@@ -42,10 +42,18 @@ class Transaction : Codable{
         self.details = try container.decodeIfPresent([TransactionDetail].self, forKey: .details)
     }
     
-    init(merchantId : String) {
+    init(merchantId : String, CurrentUser: String) {
         self.merchantId = merchantId
-        self.customerId = CurrentUser.id
+        self.customerId = CurrentUser
         self.details = []
+    }
+    
+    init (id: String, pickUpTime: String, customer: String, total: Int, status: Int) {
+        self.id = id
+        self.pickUpTime = pickUpTime
+        self.customerId = customer //ini cuma buat dummy
+        self.total = total
+        self.status = status
     }
     
     func encode(to encoder: Encoder) throws {

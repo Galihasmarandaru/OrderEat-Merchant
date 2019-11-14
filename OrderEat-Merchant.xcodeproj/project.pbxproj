@@ -11,6 +11,16 @@
 		0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F0237D048B00832704 /* OrderListViewController.swift */; };
 		0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */; };
 		0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72FC237D203500832704 /* OrderListViewModel.swift */; };
+		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
+		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
+		A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D42237D3A6800B44893 /* CustomColor.swift */; };
+		A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D44237D3B1900B44893 /* OrderedItemTableViewCell.swift */; };
+		A3895D47237D3B3300B44893 /* PriceDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D46237D3B3300B44893 /* PriceDetailsTableViewCell.swift */; };
+		A3895D49237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D48237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift */; };
+		A3895D4B237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D4A237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift */; };
+		A3895D4D237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D4C237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift */; };
+		A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D4E237D3DF000B44893 /* CheckoutViewModel.swift */; };
+		A3895D51237D458400B44893 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D50237D458400B44893 /* EmptyTableViewCell.swift */; };
 		CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E47237D2BC6005BAD6D /* Customer.swift */; };
 		CA754E4F237D2BC6005BAD6D /* OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E48237D2BC6005BAD6D /* OTP.swift */; };
 		CA754E50237D2BC6005BAD6D /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E49237D2BC6005BAD6D /* TokenAPI.swift */; };
@@ -28,7 +38,6 @@
 		CAA60271237BD82E00EE4497 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60270237BD82E00EE4497 /* OrderList.storyboard */; };
 		CAA60273237BD83E00EE4497 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */; };
 		CAA60277237BD86000EE4497 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60276237BD86000EE4497 /* Signin.storyboard */; };
-		CAA60279237BD90300EE4497 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60278237BD90300EE4497 /* Checkout.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,16 @@
 		0A1C72F0237D048B00832704 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = SOURCE_ROOT; };
 		0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0A1C72FC237D203500832704 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListViewModel.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
+		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		A3895D42237D3A6800B44893 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		A3895D44237D3B1900B44893 /* OrderedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedItemTableViewCell.swift; sourceTree = "<group>"; };
+		A3895D46237D3B3300B44893 /* PriceDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		A3895D48237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpAndPaymentTableViewCell.swift; sourceTree = "<group>"; };
+		A3895D4A237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDeclineButtonTableViewCell.swift; sourceTree = "<group>"; };
+		A3895D4C237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReadyButtonTableViewCell.swift; sourceTree = "<group>"; };
+		A3895D4E237D3DF000B44893 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		A3895D50237D458400B44893 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		CA754E47237D2BC6005BAD6D /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CA754E48237D2BC6005BAD6D /* OTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTP.swift; sourceTree = "<group>"; };
 		CA754E49237D2BC6005BAD6D /* TokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
@@ -76,7 +95,6 @@
 		CAA60270237BD82E00EE4497 /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		CAA60276237BD86000EE4497 /* Signin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signin.storyboard; sourceTree = "<group>"; };
-		CAA60278237BD90300EE4497 /* Checkout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkout.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +136,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A3895D40237D3A4100B44893 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A3895D41237D3A5100B44893 /* Views */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A3895D41237D3A5100B44893 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3895D42237D3A6800B44893 /* CustomColor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CAA601EF237BAFDC00EE4497 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +175,7 @@
 		CAA601FA237BAFDC00EE4497 /* OrderEat-Merchant */ = {
 			isa = PBXGroup;
 			children = (
+				A3895D40237D3A4100B44893 /* Tools */,
 				CAA6025B237BD52100EE4497 /* Main */,
 				CAA6025C237BD54C00EE4497 /* Classes */,
 				CAA6026C237BD57400EE4497 /* Resources */,
@@ -203,6 +238,7 @@
 		CAA6025E237BD54C00EE4497 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A3895D4E237D3DF000B44893 /* CheckoutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,7 +246,13 @@
 		CAA6025F237BD54C00EE4497 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CAA60278237BD90300EE4497 /* Checkout.storyboard */,
+				A3171736237D2ED500A27485 /* Checkout.storyboard */,
+				A3895D44237D3B1900B44893 /* OrderedItemTableViewCell.swift */,
+				A3895D46237D3B3300B44893 /* PriceDetailsTableViewCell.swift */,
+				A3895D48237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift */,
+				A3895D4A237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift */,
+				A3895D4C237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift */,
+				A3895D50237D458400B44893 /* EmptyTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +260,7 @@
 		CAA60260237BD54C00EE4497 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A3895D3E237D332A00B44893 /* CheckoutViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -471,7 +514,7 @@
 				CAA6020B237BAFDF00EE4497 /* LaunchScreen.storyboard in Resources */,
 				CAA60271237BD82E00EE4497 /* OrderList.storyboard in Resources */,
 				CAA60208237BAFDF00EE4497 /* Assets.xcassets in Resources */,
-				CAA60279237BD90300EE4497 /* Checkout.storyboard in Resources */,
+				A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */,
 				CAA60273237BD83E00EE4497 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,19 +540,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3895D49237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift in Sources */,
 				CA754E51237D2BC6005BAD6D /* Transaction.swift in Sources */,
 				CA754E54237D2BC6005BAD6D /* Merchant.swift in Sources */,
 				0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */,
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
 				0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */,
 				CA754E4F237D2BC6005BAD6D /* OTP.swift in Sources */,
+				A3895D51237D458400B44893 /* EmptyTableViewCell.swift in Sources */,
+				A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */,
 				CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */,
+				A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */,
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
+				A3895D47237D3B3300B44893 /* PriceDetailsTableViewCell.swift in Sources */,
+				A3895D4B237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift in Sources */,
+				A3895D4D237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
 				CA754E53237D2BC6005BAD6D /* TransactionDetail.swift in Sources */,
 				CA754E50237D2BC6005BAD6D /* TokenAPI.swift in Sources */,
 				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
+				A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */,
 				0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */,
+				A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
