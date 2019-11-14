@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72EE237D03D400832704 /* OrderListViewCell.swift */; };
+		0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F0237D048B00832704 /* OrderListViewController.swift */; };
+		0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */; };
 		CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */; };
 		CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */; };
 		CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1C72EE237D03D400832704 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
+		0A1C72F0237D048B00832704 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CAA601F8237BAFDC00EE4497 /* OrderEat-Merchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Merchant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				CAA60270237BD82E00EE4497 /* OrderList.storyboard */,
+				0A1C72EE237D03D400832704 /* OrderListViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +302,8 @@
 		CAA6026E237BD5BB00EE4497 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0A1C72F0237D048B00832704 /* OrderListViewController.swift */,
+				0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -456,8 +465,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */,
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
+				0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
+				0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
