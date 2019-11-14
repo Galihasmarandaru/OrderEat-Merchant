@@ -69,6 +69,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9Y-2T-fAi">
+                                                    <rect key="frame" x="399" y="103" width="299" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Food Is Ready"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="6bo-0A-e22" secondAttribute="bottom" constant="6" id="3Xi-Ry-9UR"/>
@@ -94,6 +99,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="customerDetails" destination="ba3-VL-Ewj" id="ulJ-SD-xfA"/>
+                                            <outlet property="foodisReadyButton" destination="w9Y-2T-fAi" id="QoG-9J-5BZ"/>
                                             <outlet property="orderDate" destination="KMP-WW-mMz" id="oZc-YB-qCT"/>
                                             <outlet property="orderNo" destination="bqN-tI-2tc" id="k7i-NH-lia"/>
                                             <outlet property="orderPrice" destination="kH8-uM-Vbd" id="57y-Uc-ouz"/>
