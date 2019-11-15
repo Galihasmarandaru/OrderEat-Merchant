@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72EE237D03D400832704 /* OrderListViewCell.swift */; };
 		0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F0237D048B00832704 /* OrderListViewController.swift */; };
-		0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */; };
 		0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72FC237D203500832704 /* OrderListViewModel.swift */; };
+		0A1C731C237E5FA300832704 /* MasterOrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C731B237E5FA300832704 /* MasterOrderListTableViewCell.swift */; };
+		0A1C7320237E62D900832704 /* MasterOrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */; };
 		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
 		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
 		A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D42237D3A6800B44893 /* CustomColor.swift */; };
@@ -60,8 +61,9 @@
 /* Begin PBXFileReference section */
 		0A1C72EE237D03D400832704 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		0A1C72F0237D048B00832704 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = SOURCE_ROOT; };
-		0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0A1C72FC237D203500832704 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListViewModel.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		0A1C731B237E5FA300832704 /* MasterOrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterOrderListTableViewCell.swift; sourceTree = "<group>"; };
+		0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterOrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/MasterOrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		A3895D42237D3A6800B44893 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				CAA60270237BD82E00EE4497 /* OrderList.storyboard */,
 				0A1C72EE237D03D400832704 /* OrderListViewCell.swift */,
+				0A1C731B237E5FA300832704 /* MasterOrderListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1C72F0237D048B00832704 /* OrderListViewController.swift */,
-				0A1C72F6237D154A00832704 /* OrderListTableViewController.swift */,
+				0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -552,7 +555,9 @@
 				CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */,
 				A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */,
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
+				0A1C731C237E5FA300832704 /* MasterOrderListTableViewCell.swift in Sources */,
 				A3895D47237D3B3300B44893 /* PriceDetailsTableViewCell.swift in Sources */,
+				0A1C7320237E62D900832704 /* MasterOrderListTableViewController.swift in Sources */,
 				A3895D4B237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift in Sources */,
 				A3895D4D237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
@@ -560,7 +565,6 @@
 				CA754E50237D2BC6005BAD6D /* TokenAPI.swift in Sources */,
 				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
 				A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */,
-				0A1C72F7237D154A00832704 /* OrderListTableViewController.swift in Sources */,
 				A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
 			);

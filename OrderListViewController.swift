@@ -8,22 +8,31 @@
 
 import UIKit
 
-class OrderListViewController: UIViewController {
+class OrderListViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
     @IBOutlet weak var detailsTableView: UITableView!
     
     var isiCell = OrderListViewModel.getTransaction()
     var color : UIColor!
+    let cellSpacingHeight: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
         // Do any additional setup after loading the view.
       
         detailsTableView.backgroundColor = color
     }
     
-
+    @objc func openCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+               var imagePicker = UIImagePickerController()
+               imagePicker.delegate = self
+               imagePicker.sourceType = .camera;
+               imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+           }
+    }
     /*
     // MARK: - Navigation
 
@@ -37,21 +46,38 @@ class OrderListViewController: UIViewController {
 }
 
 extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isiCell.count
-        
-    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+           return isiCell.count
+       }
+
+       // There is just one row in every section
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return 1
+       }
+
+       // Set the spacing between sections
+       func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+           return cellSpacingHeight
+       }
+
+       // Make the background color show through
+       func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+           let headerView = UIView()
+           headerView.backgroundColor = UIColor.clear
+           return headerView
+       }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrderListViewCell
         
-        cell.orderNo.text = isiCell[indexPath.row].id
-        cell.pickUpTime.text = isiCell[indexPath.row].pickUpTime
-        cell.customerDetails.text = isiCell[indexPath.row].customerId
-        cell.orderPrice.text = "\(isiCell[indexPath.row].total!)"
+        cell.orderNo.text = "Order No : \(isiCell[indexPath.section].id!)"
+        cell.pickUpTime.text = "Pick Up Time : \(isiCell[indexPath.section].pickUpTime!)"
+        cell.customerDetails.text = isiCell[indexPath.section].customerId
+        cell.orderPrice.text = "Rp. \(isiCell[indexPath.section].total!)"
         cell.orderDate.text = "29 Oktober 2019"
-        cell.orderStatus.text = "\(isiCell[indexPath.row].status!)"
+        cell.orderStatus.text = "\(isiCell[indexPath.section].status!)"
         if isiCell[indexPath.row].status == 3{
             cell.foodisReadyButton.isHidden = false
         }else {
