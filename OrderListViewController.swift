@@ -57,7 +57,7 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
         }else {
             cell.foodisReadyButton.isHidden = true
         }
-        
+
         return cell
     }
     

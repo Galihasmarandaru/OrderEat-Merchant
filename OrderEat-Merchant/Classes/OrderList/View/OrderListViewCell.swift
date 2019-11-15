@@ -16,4 +16,7 @@ class OrderListViewCell: UITableViewCell {
     @IBOutlet weak var orderDate: UILabel!
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var foodisReadyButton: UIButton!
+    
 }
+
+
