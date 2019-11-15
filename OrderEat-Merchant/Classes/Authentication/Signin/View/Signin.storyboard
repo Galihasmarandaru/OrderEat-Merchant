@@ -1,7 +1,76 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLp-mV-GeZ">
+    <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Signin View Controller-->
+        <scene sceneID="mtv-yz-p9l">
+            <objects>
+                <viewController id="GLp-mV-GeZ" customClass="SigninViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axv-eI-Kd4">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-signin-merchant" translatesAutoresizingMaskIntoConstraints="NO" id="Mvw-Hj-BjD">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-orange" translatesAutoresizingMaskIntoConstraints="NO" id="uva-8W-NL1">
+                                <rect key="frame" x="573" y="0.0" width="539" height="834"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="539" id="c30-nc-Tew"/>
+                                    <constraint firstAttribute="height" constant="834" id="kyk-xa-VUE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-merchant" translatesAutoresizingMaskIntoConstraints="NO" id="bH7-Gn-J8H">
+                                <rect key="frame" x="647" y="85" width="390" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-dy-lFc" customClass="CustomTextField" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                <rect key="frame" x="647" y="400" width="390" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDY-gH-wP2" customClass="CustomTextField" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                <rect key="frame" x="647" y="462" width="390" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcP-xq-cl9">
+                                <rect key="frame" x="669" y="533" width="346" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.89411764709999997" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.52156862749999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uva-8W-NL1" firstAttribute="trailing" secondItem="qQl-pH-qFc" secondAttribute="trailing" id="6rg-EB-bYO"/>
+                            <constraint firstItem="Mvw-Hj-BjD" firstAttribute="bottom" secondItem="axv-eI-Kd4" secondAttribute="bottom" id="7yQ-0y-ACb"/>
+                            <constraint firstItem="uva-8W-NL1" firstAttribute="top" secondItem="qQl-pH-qFc" secondAttribute="top" id="fWh-n0-07j"/>
+                            <constraint firstItem="Mvw-Hj-BjD" firstAttribute="top" secondItem="qQl-pH-qFc" secondAttribute="top" id="gwc-Fc-7nD"/>
+                            <constraint firstItem="Mvw-Hj-BjD" firstAttribute="leading" secondItem="qQl-pH-qFc" secondAttribute="leading" id="lup-O5-94X"/>
+                            <constraint firstItem="uva-8W-NL1" firstAttribute="bottom" secondItem="axv-eI-Kd4" secondAttribute="bottom" id="rIg-dz-xwP"/>
+                            <constraint firstItem="Mvw-Hj-BjD" firstAttribute="trailing" secondItem="qQl-pH-qFc" secondAttribute="trailing" id="xvN-m1-tzE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qQl-pH-qFc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tj-Ij-3Le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-238.48920863309354" y="-192.08633093525182"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg-orange" width="1024" height="1536"/>
+        <image name="bg-signin-merchant" width="1024" height="768"/>
+        <image name="logo-merchant" width="218" height="230"/>
+    </resources>
 </document>

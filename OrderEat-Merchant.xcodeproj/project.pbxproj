@@ -28,6 +28,8 @@
 		CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E4B237D2BC6005BAD6D /* Menu.swift */; };
 		CA754E53237D2BC6005BAD6D /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E4C237D2BC6005BAD6D /* TransactionDetail.swift */; };
 		CA754E54237D2BC6005BAD6D /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E4D237D2BC6005BAD6D /* Merchant.swift */; };
+		CA754E6C237E719F005BAD6D /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E6B237E719F005BAD6D /* SigninViewController.swift */; };
+		CA754E6E237E71C6005BAD6D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E6D237E71C6005BAD6D /* CustomTextField.swift */; };
 		CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */; };
 		CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */; };
 		CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAA60204237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld */; };
@@ -79,6 +81,8 @@
 		CA754E4B237D2BC6005BAD6D /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CA754E4C237D2BC6005BAD6D /* TransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		CA754E4D237D2BC6005BAD6D /* Merchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		CA754E6B237E719F005BAD6D /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		CA754E6D237E71C6005BAD6D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CAA601F8237BAFDC00EE4497 /* OrderEat-Merchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Merchant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA601FB237BAFDC00EE4497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA601FD237BAFDC00EE4497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				CAA60276237BD86000EE4497 /* Signin.storyboard */,
+				CA754E6D237E71C6005BAD6D /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 		CAA60275237BD84E00EE4497 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CA754E6B237E719F005BAD6D /* SigninViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -549,6 +555,8 @@
 				CA754E4F237D2BC6005BAD6D /* OTP.swift in Sources */,
 				A3895D51237D458400B44893 /* EmptyTableViewCell.swift in Sources */,
 				A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */,
+				CA754E6E237E71C6005BAD6D /* CustomTextField.swift in Sources */,
+				CA754E6C237E719F005BAD6D /* SigninViewController.swift in Sources */,
 				CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */,
 				A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */,
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
