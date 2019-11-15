@@ -234,7 +234,7 @@
                                             <outlet property="declineButton" destination="yi5-IF-DTN" id="3mF-9Z-zBI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="200" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="200" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="480" width="1072" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fdK-H7-q2q" id="oid-G2-4iL">

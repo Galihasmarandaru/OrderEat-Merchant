@@ -16,9 +16,10 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkoutTableView: UITableView!
     
-    var status = 3
+    var status = 2
     
     var foods = CheckoutViewModel.getDataMenuTransaction()
+    let orderNumber: String = "D-01"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,19 @@ class CheckoutViewController: UIViewController {
     
     @IBAction func foodReadyButtonClicked(_ sender: Any) {
         // do something is food ready button is clicked
+        Alert.showBasicAlert(on: self, with: "Confirm Process", message: "Are you sure Order No: " + orderNumber + " is done and ready to be picked up?", yesAction: {
+            self.alertActionYesClicked()
+        }, noAction: {
+            self.alertActionNoClicked()
+        })
+    }
+    
+    func alertActionYesClicked() {
+        // function untuk ketika user klik button food ready dan klik yes di confirmation alert
+    }
+    
+    func alertActionNoClicked() {
+        // function untuk ketika user klik button food ready tapi klik no di confirmation alert
     }
     
     /*
@@ -62,7 +76,12 @@ extension CheckoutViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count + 6
+        if status == 0 || status == 2 {
+            return foods.count + 6
+        }
+        else {
+            return foods.count + 5
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
