@@ -128,6 +128,7 @@
                     <navigationItem key="navigationItem" title="INCOMING" id="Hba-E0-oDg"/>
                     <connections>
                         <outlet property="detailsTableView" destination="vsZ-AU-Bgd" id="QsQ-YG-xXL"/>
+                        <segue destination="uM4-yx-CyD" kind="show" identifier="push" id="aGk-hj-qfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbX-np-gyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,6 +247,58 @@
             </objects>
             <point key="canvasLocation" x="-1566" y="-1182"/>
         </scene>
+        <!--Code Scanner View Controller-->
+        <scene sceneID="cCi-3y-THk">
+            <objects>
+                <viewController storyboardIdentifier="QRCodeScannerViewController" id="uM4-yx-CyD" customClass="QRCodeScannerViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsO-1g-Pqu">
+                        <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-xg-BoQ" customClass="QRScannerView" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-o4-Qce">
+                                        <rect key="frame" x="33" y="29.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="3VP-x2-Tdk"/>
+                                            <constraint firstAttribute="width" constant="45" id="bd4-kP-uV2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="chevron.left.circle.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButton:" destination="uM4-yx-CyD" eventType="touchUpInside" id="tJ6-pp-CJ0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="nxX-o4-Qce" firstAttribute="leading" secondItem="KVC-xg-BoQ" secondAttribute="leading" constant="33" id="7uv-ba-RMN"/>
+                                    <constraint firstItem="nxX-o4-Qce" firstAttribute="top" secondItem="KVC-xg-BoQ" secondAttribute="top" constant="29" id="GJu-WU-IiJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KVC-xg-BoQ" firstAttribute="top" secondItem="vgv-Ow-EqG" secondAttribute="top" id="V4s-nt-fTd"/>
+                            <constraint firstItem="KVC-xg-BoQ" firstAttribute="trailing" secondItem="vgv-Ow-EqG" secondAttribute="trailing" id="bHS-ct-4Cz"/>
+                            <constraint firstItem="KVC-xg-BoQ" firstAttribute="bottom" secondItem="vgv-Ow-EqG" secondAttribute="bottom" id="qlw-ZH-dsn"/>
+                            <constraint firstItem="KVC-xg-BoQ" firstAttribute="leading" secondItem="vgv-Ow-EqG" secondAttribute="leading" id="rVo-cA-YMS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vgv-Ow-EqG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DQP-wT-bUX"/>
+                    <connections>
+                        <outlet property="scannerView" destination="KVC-xg-BoQ" id="yUC-4M-hpd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="po5-69-Xrl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.60431654676259" y="-1744.6043165467627"/>
+        </scene>
         <!--Checkout-->
         <scene sceneID="6eY-yZ-W13">
             <objects>
@@ -257,6 +310,9 @@
             <point key="canvasLocation" x="21" y="-1235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.left.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lk6-1V-DVT"/>
     </inferredMetricsTieBreakers>

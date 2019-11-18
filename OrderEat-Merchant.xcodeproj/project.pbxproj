@@ -12,6 +12,10 @@
 		0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C72FC237D203500832704 /* OrderListViewModel.swift */; };
 		0A1C731C237E5FA300832704 /* MasterOrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C731B237E5FA300832704 /* MasterOrderListTableViewCell.swift */; };
 		0A1C7320237E62D900832704 /* MasterOrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */; };
+		0A7635772382536B005E5B8C /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7635762382536B005E5B8C /* QRCodeScannerViewController.swift */; };
+		0A763579238253AD005E5B8C /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A763578238253AD005E5B8C /* QRScannerView.swift */; };
+		0A76357B238253BE005E5B8C /* GetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357A238253BE005E5B8C /* GetLabel.swift */; };
+		0A76357D238257A5005E5B8C /* QRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357C238257A5005E5B8C /* QRData.swift */; };
 		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
 		A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE4237E689D0076D4D9 /* Alert.swift */; };
 		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
@@ -67,6 +71,10 @@
 		0A1C72FC237D203500832704 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListViewModel.swift; path = "OrderEat-Merchant/Classes/OrderList/View/OrderListViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		0A1C731B237E5FA300832704 /* MasterOrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterOrderListTableViewCell.swift; sourceTree = "<group>"; };
 		0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterOrderListTableViewController.swift; path = "OrderEat-Merchant/Classes/OrderList/View/MasterOrderListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		0A7635762382536B005E5B8C /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A763578238253AD005E5B8C /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = SOURCE_ROOT; };
+		0A76357A238253BE005E5B8C /* GetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLabel.swift; sourceTree = SOURCE_ROOT; };
+		0A76357C238257A5005E5B8C /* QRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRData.swift; sourceTree = "<group>"; };
 		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3573CE4237E689D0076D4D9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 				CA754E49237D2BC6005BAD6D /* TokenAPI.swift */,
 				CA754E4A237D2BC6005BAD6D /* Transaction.swift */,
 				CA754E4C237D2BC6005BAD6D /* TransactionDetail.swift */,
+				0A76357C238257A5005E5B8C /* QRData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				0A1C72FC237D203500832704 /* OrderListViewModel.swift */,
+				0A763578238253AD005E5B8C /* QRScannerView.swift */,
+				0A76357A238253BE005E5B8C /* GetLabel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -389,6 +400,7 @@
 			children = (
 				0A1C72F0237D048B00832704 /* OrderListViewController.swift */,
 				0A1C731F237E62D900832704 /* MasterOrderListTableViewController.swift */,
+				0A7635762382536B005E5B8C /* QRCodeScannerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -559,7 +571,9 @@
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
 				0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */,
 				A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */,
+				0A76357B238253BE005E5B8C /* GetLabel.swift in Sources */,
 				CA754E4F237D2BC6005BAD6D /* OTP.swift in Sources */,
+				0A76357D238257A5005E5B8C /* QRData.swift in Sources */,
 				A3895D51237D458400B44893 /* EmptyTableViewCell.swift in Sources */,
 				A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */,
 				CA754E6E237E71C6005BAD6D /* CustomTextField.swift in Sources */,
@@ -569,11 +583,13 @@
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
 				0A1C731C237E5FA300832704 /* MasterOrderListTableViewCell.swift in Sources */,
 				A3895D47237D3B3300B44893 /* PriceDetailsTableViewCell.swift in Sources */,
+				0A7635772382536B005E5B8C /* QRCodeScannerViewController.swift in Sources */,
 				0A1C7320237E62D900832704 /* MasterOrderListTableViewController.swift in Sources */,
 				A3895D4B237D3B6200B44893 /* AcceptDeclineButtonTableViewCell.swift in Sources */,
 				A3895D4D237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift in Sources */,
 				CAA601FC237BAFDC00EE4497 /* AppDelegate.swift in Sources */,
 				CA754E53237D2BC6005BAD6D /* TransactionDetail.swift in Sources */,
+				0A763579238253AD005E5B8C /* QRScannerView.swift in Sources */,
 				CA754E50237D2BC6005BAD6D /* TokenAPI.swift in Sources */,
 				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
 				A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */,
