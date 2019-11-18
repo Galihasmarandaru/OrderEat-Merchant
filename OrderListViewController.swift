@@ -25,13 +25,12 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
     }
     
     @objc func openCamera(){
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-               var imagePicker = UIImagePickerController()
-               imagePicker.delegate = self
-               imagePicker.sourceType = .camera;
-               imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-           }
+//        let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
+//        let qrScanPage = storyboard.instantiateViewController(identifier: "QRCodeScannerViewController") as! QRCodeScannerViewController
+//        let appDelegate = UIApplication.shared.windows
+//        appDelegate.first?.rootViewController = qrScanPage
+        
+        performSegue(withIdentifier: "push", sender: nil)
     }
     /*
     // MARK: - Navigation
