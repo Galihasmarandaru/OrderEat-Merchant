@@ -36,6 +36,7 @@ class QRScannerView: UIView {
     
     //MARK: overriding the layerClass to return `AVCaptureVideoPreviewLayer`.
     override class var layerClass: AnyClass  {
+        
         return AVCaptureVideoPreviewLayer.self
     }
     override var layer: AVCaptureVideoPreviewLayer {
@@ -61,6 +62,8 @@ extension QRScannerView {
     private func doInitialSetup() {
         clipsToBounds = true
         captureSession = AVCaptureSession()
+        
+        
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
         let videoInput: AVCaptureDeviceInput

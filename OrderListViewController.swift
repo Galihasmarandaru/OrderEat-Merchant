@@ -9,19 +9,75 @@
 import UIKit
 
 class OrderListViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
-
-    @IBOutlet weak var detailsTableView: UITableView!
     
-    var isiCell = OrderListViewModel.getTransaction()
-    var color : UIColor!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let transactionTitle = ["Incoming","Waiting Payment","Ongoing","History"]
+    
     let cellSpacingHeight: CGFloat = 10
+    
+    // Injection
+    let viewModel = OrderListViewModel()
+    
+    // Container
+    var transactions : [Transaction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
-        // Do any additional setup after loading the view.
-      
-        detailsTableView.backgroundColor = color
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        attemptFetchTransaction()
+    }
+    
+    func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(attemptFetchTransaction), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc func attemptFetchTransaction() {
+        let status : APIRequest.TransactionStatus
+        
+        switch transactionTitle.firstIndex(of: self.title!) {
+        case 0:
+            status = .incoming
+        case 1:
+            status = .waitForPayment
+        case 2:
+            status = .ongoing
+        case 3:
+            status = .history
+        default:
+            status = .incoming
+        }
+        
+        viewModel.fetchTransactions(status: status)
+        
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions(status: status)
+                }
+            }
+        }
+        
+        viewModel.didFinishFetch = {
+            if let transactions = self.viewModel.transactions {
+                self.transactions = transactions
+                
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     @objc func openCamera(){
@@ -30,55 +86,46 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
 //        let appDelegate = UIApplication.shared.windows
 //        appDelegate.first?.rootViewController = qrScanPage
         
-        performSegue(withIdentifier: "push", sender: nil)
+        performSegue(withIdentifier: "toScannerView", sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toScannerView" {
+            let vc = segue.destination as! QRCodeScannerViewController
+            vc.parentVC = self
+        }
     }
-    */
-
 }
 
 extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
 
     func numberOfSections(in tableView: UITableView) -> Int {
-           return isiCell.count
-       }
+        return 1
+    }
 
-       // There is just one row in every section
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return 1
-       }
+    // There is just one row in every section
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactions.count
+    }
 
-       // Set the spacing between sections
-       func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return cellSpacingHeight
-       }
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
 
-       // Make the background color show through
-       func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           let headerView = UIView()
-           headerView.backgroundColor = UIColor.clear
-           return headerView
-       }
-
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrderListViewCell
         
-        cell.orderNo.text = "Order No : \(isiCell[indexPath.section].id!)"
-        cell.pickUpTime.text = "Pick Up Time : \(isiCell[indexPath.section].pickUpTime!)"
-        cell.customerDetails.text = isiCell[indexPath.section].customerId
-        cell.orderPrice.text = "Rp. \(isiCell[indexPath.section].total!)"
-        cell.orderDate.text = "29 Oktober 2019"
-        cell.orderStatus.text = "\(isiCell[indexPath.section].status!)"
-        if isiCell[indexPath.row].status == 3{
+        cell.transaction = transactions[indexPath.row]
+        
+        if transactions[indexPath.row].status == 2{
             cell.foodisReadyButton.isHidden = false
+            cell.foodReadyClosure = {[unowned self] in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            
         }else {
             cell.foodisReadyButton.isHidden = true
         }
@@ -86,7 +133,12 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "checkout") as! CheckoutViewController
+        
+        vc.transaction = transactions[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

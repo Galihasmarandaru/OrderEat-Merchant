@@ -14,16 +14,11 @@ class OrderedItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemQtyLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
-    @IBOutlet weak var itemStatusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-    }
-    
-    func config() {
-        self.itemStatusLabel.textColor = .orangeTextColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,13 +27,14 @@ class OrderedItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var data: Menu! {
+    var detail : TransactionDetail! {
         didSet {
+            let menu = detail.menu!
+            
             self.itemImageView.image = UIImage(named: "Blackpepper Burger.png")
-            self.itemNameLabel.text = data.name
-            self.itemQtyLabel.text = "2"
-            self.itemPriceLabel.text = "\(data.price!)"
-            self.itemStatusLabel.text = "Waiting for payment"
+            self.itemNameLabel.text = menu.name
+            self.itemQtyLabel.text = String(detail.qty!)
+            self.itemPriceLabel.text = "Rp. \(menu.price!)"
         }
     }
 

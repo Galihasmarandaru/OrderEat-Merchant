@@ -8,24 +8,6 @@
 
 import UIKit
 
-/*
-struct Menu {
-    let nameMenu: String;
-    let detailMenu: String;
-    let priceMenu: Int;
-    let imageMenu: UIImage;
-    var qty: Int;
-    
-    init(nameMenu: String, detailMenu: String, priceMenu: Int, imageMenu: UIImage, qty: Int) {
-        self.nameMenu = nameMenu
-        self.detailMenu = detailMenu
-        self.priceMenu = priceMenu
-        self.imageMenu = imageMenu
-        self.qty = qty
-    }
-}
-*/
-
 class Menu : Codable {
     var id : String? // D
     var merchantId : String? // E
@@ -44,11 +26,6 @@ class Menu : Codable {
         case price
         case isAvailable
         case image
-    }
-    
-    init(name: String, price: Int) {
-        self.name = name
-        self.price = price
     }
     
     required init(from decoder: Decoder) throws {

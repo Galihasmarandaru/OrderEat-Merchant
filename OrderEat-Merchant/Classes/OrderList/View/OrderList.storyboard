@@ -2,15 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bii-T1-EZb">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--INCOMING-->
+        <!--Incoming-->
         <scene sceneID="Bjb-fk-ZBD">
             <objects>
-                <viewController storyboardIdentifier="OrderListView" id="R82-wP-dtR" customClass="OrderListViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderListView" title="Incoming" id="R82-wP-dtR" customClass="OrderListViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZx-A2-EQn">
                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +73,9 @@
                                                     <rect key="frame" x="399" y="103" width="299" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Food Is Ready"/>
+                                                    <connections>
+                                                        <action selector="foodReadyBtnPressed:" destination="oSM-uS-UC2" eventType="touchUpInside" id="rl8-mv-wZa"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -105,14 +108,13 @@
                                             <outlet property="orderPrice" destination="kH8-uM-Vbd" id="57y-Uc-ouz"/>
                                             <outlet property="orderStatus" destination="6bo-0A-e22" id="sip-Ia-iRd"/>
                                             <outlet property="pickUpTime" destination="wyT-Bj-p7U" id="uFj-Pr-tCh"/>
-                                            <segue destination="qW7-bh-yGg" kind="show" id="vwA-Sv-Q1Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="R82-wP-dtR" id="sX9-sd-bOo"/>
-                                    <outlet property="delegate" destination="R82-wP-dtR" id="0Bu-of-wGK"/>
+                                    <outlet property="dataSource" destination="R82-wP-dtR" id="Gk6-B1-G7k"/>
+                                    <outlet property="delegate" destination="R82-wP-dtR" id="uLz-ka-4GS"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -125,21 +127,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8l-7y-hDb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="INCOMING" id="Hba-E0-oDg"/>
+                    <navigationItem key="navigationItem" title="Incoming" id="Hba-E0-oDg"/>
                     <connections>
-                        <outlet property="detailsTableView" destination="vsZ-AU-Bgd" id="QsQ-YG-xXL"/>
-                        <segue destination="uM4-yx-CyD" kind="show" identifier="push" id="aGk-hj-qfp"/>
+                        <outlet property="tableView" destination="vsZ-AU-Bgd" id="PB6-cn-mYh"/>
+                        <segue destination="uM4-yx-CyD" kind="show" identifier="toScannerView" id="aGk-hj-qfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbX-np-gyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-717.08633093525179" y="-1182.0143884892086"/>
         </scene>
-        <!--Bola Ubi Kopong-->
+        <!--Item-->
         <scene sceneID="bt5-Ua-iEM">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="wAr-7o-jDu" customClass="MasterOrderListTableViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FrT-d3-owQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FrT-d3-owQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -191,7 +193,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="sN6-HD-pPb"/>
-                    <navigationItem key="navigationItem" title="Bola Ubi Kopong" id="11d-cy-f1R"/>
+                    <navigationItem key="navigationItem" id="11d-cy-f1R"/>
                     <connections>
                         <segue destination="kXL-Ci-cNx" kind="showDetail" identifier="changeDetails" id="lk6-1V-DVT"/>
                     </connections>
@@ -297,17 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="po5-69-Xrl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.60431654676259" y="-1744.6043165467627"/>
-        </scene>
-        <!--Checkout-->
-        <scene sceneID="6eY-yZ-W13">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Checkout" id="qW7-bh-yGg" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="KBN-cw-Kio"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hfI-1r-pXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="-1235"/>
+            <point key="canvasLocation" x="56" y="-983"/>
         </scene>
     </scenes>
     <resources>

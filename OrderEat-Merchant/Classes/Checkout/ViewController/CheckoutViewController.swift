@@ -16,15 +16,28 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkoutTableView: UITableView!
     
-    var status = 2
+    var orderNumber : String!
     
-    var foods = CheckoutViewModel.getDataMenuTransaction()
-    let orderNumber: String = "D-01"
+    var transaction : Transaction!
+    
+    var details : [TransactionDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.config()
+        self.initTransaction()
+    }
+    
+    func initTransaction() {
+        let customerName = transaction.customer!.name!
+        let customerPhone = transaction.customer!.phone!
+        nameAndPhoneLabel.text = "\(customerName) - \(customerPhone)"
+       
+        orderNoAndPickUpTimeLabel.text = "D-01 | \(transaction.pickUpTime?.time)"
+        dateLabel.text = "Date"
+       
+        details = transaction.details!
     }
     
     func config() {
@@ -46,29 +59,13 @@ class CheckoutViewController: UIViewController {
         // do something is food ready button is clicked
         Alert.showBasicAlert(on: self, with: "Confirm Process", message: "Are you sure Order No: " + orderNumber + " is done and ready to be picked up?", yesAction: {
             self.alertActionYesClicked()
-        }, noAction: {
-            self.alertActionNoClicked()
         })
     }
     
     func alertActionYesClicked() {
-        // function untuk ketika user klik button food ready dan klik yes di confirmation alert
+        let parameter = ["status" : 3]
+        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
     }
-    
-    func alertActionNoClicked() {
-        // function untuk ketika user klik button food ready tapi klik no di confirmation alert
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension CheckoutViewController: UITableViewDataSource, UITableViewDelegate {
@@ -76,64 +73,65 @@ extension CheckoutViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let status = transaction.status!
         if status == 0 || status == 2 {
-            return foods.count + 6
+            return details.count + 5
         }
         else {
-            return foods.count + 5
+            return details.count + 4
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < foods.count {
+        if indexPath.row < details.count {
             let cellFood = tableView.dequeueReusableCell(withIdentifier: "orderedItemTableViewCell", for: indexPath) as! OrderedItemTableViewCell
             
-            cellFood.data = foods[indexPath.row]
+            cellFood.detail = details[indexPath.row]
             
             return cellFood
         }
-        else if indexPath.row == foods.count {
+        else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "priceDetailsTableViewCell", for: indexPath) as! PriceDetailsTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. 130.000"
+            cellSub.rightLabel.text = "Rp. \(transaction.getSubTotalPrice())"
             
             return cellSub
         }
-        else if indexPath.row == foods.count + 1 {
+        else if indexPath.row == details.count + 1 {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceDetailsTableViewCell", for: indexPath) as! PriceDetailsTableViewCell
             cellTax.leftLabel.text = "Tax"
-            cellTax.rightLabel.text = "Rp. 13.000"
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
             
             return cellTax
         }
-        else if indexPath.row == foods.count + 2 {
+        else if indexPath.row == details.count + 2 {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "priceDetailsTableViewCell", for: indexPath) as! PriceDetailsTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. 143.000"
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
             
             return cellTotal
         }
-        else if indexPath.row == foods.count + 3 {
+        else if indexPath.row == details.count + 3 {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpAndPaymentTableViewCell", for: indexPath) as! PickUpAndPaymentTableViewCell
             
             cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = "12.00"
-            cellPickup.leftLabel.isHidden = false
-            cellPickup.rightLabel.isHidden = false
+            cellPickup.rightLabel.text = "\(transaction.pickUpTime!.time)"
             
             return cellPickup
         }
-        else if indexPath.row == foods.count + 4 {
-            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpAndPaymentTableViewCell", for: indexPath) as! PickUpAndPaymentTableViewCell
-            
-            cellPickup.leftLabel.text = "Payment Method"
-            cellPickup.rightLabel.text = "GOPAY"
-            cellPickup.leftLabel.isHidden = false
-            cellPickup.rightLabel.isHidden = false
-            
-            return cellPickup
-        }
+//        else if indexPath.row == details.count + 4 {
+//            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpAndPaymentTableViewCell", for: indexPath) as! PickUpAndPaymentTableViewCell
+//
+//            cellPickup.leftLabel.text = "Payment Method"
+//            cellPickup.rightLabel.text = "GOPAY"
+//            cellPickup.leftLabel.isHidden = false
+//            cellPickup.rightLabel.isHidden = false
+//
+//            return cellPickup
+//        }
         else {
+            let status = transaction.status!
+            
             if status == 0 {
                 let cellButton = tableView.dequeueReusableCell(withIdentifier: "acceptDeclineButtonTableViewCell", for: indexPath) as! AcceptDeclineButtonTableViewCell
                 
@@ -162,6 +160,24 @@ extension CheckoutViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
-    
 }
+
+
+/*
+ // accept function
+ let parameter = ["status" : 1]
+ APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+ 
+ // decline function
+ let parameter = ["status" : 6]
+ APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+ 
+ // food ready function
+ let parameter = ["status" : 3]
+ APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+ 
+ // complete function
+ let parameter = ["status" : 4]
+ APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+ 
+ */

@@ -1,15 +1,15 @@
 //
-//  OrderListViewModel.swift
+//  QRScannerViewModel.swift
 //  OrderEat-Merchant
 //
-//  Created by Malvin Santoso on 14/11/19.
+//  Created by Frederic Orlando on 20/11/19.
 //  Copyright © 2019 Galih Asmarandaru. All rights reserved.
 //
 
 import Foundation
 
-class OrderListViewModel{
-    var transactions : [Transaction]? {
+class QRScannerViewModel{
+    var transaction : Transaction? {
         didSet {
             self.didFinishFetch?()
         }
@@ -33,10 +33,10 @@ class OrderListViewModel{
     var didFinishFetch : (() -> ())?
 
     //Network call
-    func fetchTransactions(status : APIRequest.TransactionStatus) {
+    func fetchTransactionDetail(id : String) {
         isLoading = true
 
-        APIRequest.getTransactions(merchantId: CurrentUser.id, status: status, completion: { (transactions, error) in
+        APIRequest.getDetail(.transactions, id: id) { (transaction, error) in
             if let error = error {
                 self.errorString = error.rawValue
                 self.isLoading = false
@@ -44,7 +44,7 @@ class OrderListViewModel{
             }
             self.errorString = nil
             self.isLoading = false
-            self.transactions = transactions
-        })
+            self.transaction = transaction as? Transaction
+        }
     }
 }

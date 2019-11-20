@@ -10,7 +10,7 @@
         <!--Checkout View Controller-->
         <scene sceneID="vMJ-ZM-EET">
             <objects>
-                <viewController id="8gz-LW-9sm" customClass="CheckoutViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkout" id="8gz-LW-9sm" customClass="CheckoutViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQZ-xY-nGL">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,28 +88,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-D5-wQ5">
-                                                    <rect key="frame" x="144" y="96" width="908" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Fvw-Nu-peV" secondAttribute="trailing" constant="20" id="5x7-kl-TAY"/>
                                                 <constraint firstAttribute="trailing" secondItem="d5M-bf-2fz" secondAttribute="trailing" constant="20" id="A1N-CS-WH5"/>
-                                                <constraint firstItem="cRw-D5-wQ5" firstAttribute="leading" secondItem="I2W-HI-i6u" secondAttribute="trailing" constant="20" id="ANX-qu-UcN"/>
                                                 <constraint firstItem="d5M-bf-2fz" firstAttribute="leading" secondItem="I2W-HI-i6u" secondAttribute="trailing" constant="20" id="BEE-OB-YfK"/>
                                                 <constraint firstItem="rMY-gJ-Fe4" firstAttribute="leading" secondItem="I2W-HI-i6u" secondAttribute="trailing" constant="20" id="DeP-EH-msl"/>
                                                 <constraint firstItem="I2W-HI-i6u" firstAttribute="leading" secondItem="s4a-zH-6Jq" secondAttribute="leading" constant="20" id="ERN-Tj-B57"/>
                                                 <constraint firstItem="Fvw-Nu-peV" firstAttribute="leading" secondItem="I2W-HI-i6u" secondAttribute="trailing" constant="20" id="JJT-5f-b7P"/>
                                                 <constraint firstItem="d5M-bf-2fz" firstAttribute="top" secondItem="s4a-zH-6Jq" secondAttribute="topMargin" constant="8" id="TJW-xm-mIv"/>
-                                                <constraint firstItem="cRw-D5-wQ5" firstAttribute="top" secondItem="rMY-gJ-Fe4" secondAttribute="bottom" constant="10" id="ZI3-CZ-UNu"/>
                                                 <constraint firstAttribute="trailing" secondItem="rMY-gJ-Fe4" secondAttribute="trailing" constant="20" id="cQW-qy-aty"/>
                                                 <constraint firstItem="rMY-gJ-Fe4" firstAttribute="top" secondItem="Fvw-Nu-peV" secondAttribute="bottom" constant="10" id="clr-8J-3Oh"/>
                                                 <constraint firstItem="I2W-HI-i6u" firstAttribute="centerY" secondItem="s4a-zH-6Jq" secondAttribute="centerY" id="ejM-x4-9cH"/>
                                                 <constraint firstItem="Fvw-Nu-peV" firstAttribute="top" secondItem="d5M-bf-2fz" secondAttribute="bottom" constant="3" id="eo2-lc-7a5"/>
-                                                <constraint firstAttribute="trailing" secondItem="cRw-D5-wQ5" secondAttribute="trailing" constant="20" id="oGN-2I-ABV"/>
                                                 <constraint firstItem="I2W-HI-i6u" firstAttribute="top" secondItem="s4a-zH-6Jq" secondAttribute="top" constant="20" id="vG7-Vf-NTG"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -118,7 +109,6 @@
                                             <outlet property="itemNameLabel" destination="d5M-bf-2fz" id="zla-E2-qdr"/>
                                             <outlet property="itemPriceLabel" destination="rMY-gJ-Fe4" id="fnV-Mf-nf6"/>
                                             <outlet property="itemQtyLabel" destination="Fvw-Nu-peV" id="aaS-CM-Lmo"/>
-                                            <outlet property="itemStatusLabel" destination="cRw-D5-wQ5" id="jvQ-gZ-8G7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDetailsTableViewCell" rowHeight="45" id="4Zo-FJ-okA" customClass="PriceDetailsTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
@@ -191,15 +181,15 @@
                                             <outlet property="rightLabel" destination="8Zz-Vd-3xi" id="DMh-so-Lg4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="acceptDeclineButtonTableViewCell" rowHeight="200" id="K6c-vn-YQY" customClass="AcceptDeclineButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280" width="1072" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="acceptDeclineButtonTableViewCell" rowHeight="60" id="K6c-vn-YQY" customClass="AcceptDeclineButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="1072" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6c-vn-YQY" id="jSg-z4-ISJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50x-wj-ZLL">
-                                                    <rect key="frame" x="546" y="153" width="181" height="36"/>
+                                                    <rect key="frame" x="546" y="19" width="181" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="TxZ-va-2e8"/>
                                                         <constraint firstAttribute="width" constant="181" id="daz-15-ry1"/>
@@ -210,7 +200,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-IF-DTN">
-                                                    <rect key="frame" x="345" y="153" width="181" height="36"/>
+                                                    <rect key="frame" x="345" y="13" width="181" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="bap-4J-LHt"/>
                                                         <constraint firstAttribute="height" constant="36" id="qTD-Nn-VTB"/>
@@ -234,15 +224,15 @@
                                             <outlet property="declineButton" destination="yi5-IF-DTN" id="3mF-9Z-zBI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="200" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="480" width="1072" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="65" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="340" width="1072" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fdK-H7-q2q" id="oid-G2-4iL">
-                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz1-gl-wYa">
-                                                    <rect key="frame" x="445.5" y="144" width="181" height="36"/>
+                                                    <rect key="frame" x="445.5" y="15" width="181" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="MLI-Gd-lBl"/>
                                                         <constraint firstAttribute="height" constant="36" id="v7r-tK-WFb"/>
@@ -262,14 +252,6 @@
                                         <connections>
                                             <outlet property="foodReadyButton" destination="Zz1-gl-wYa" id="LgZ-0o-Ni3"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyTableViewCell" id="N5d-nb-FfS">
-                                        <rect key="frame" x="0.0" y="680" width="1072" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N5d-nb-FfS" id="tZC-Xd-PRX">
-                                            <rect key="frame" x="0.0" y="0.0" width="1072" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
