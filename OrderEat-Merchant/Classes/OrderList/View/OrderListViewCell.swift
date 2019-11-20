@@ -29,7 +29,7 @@ class OrderListViewCell: UITableViewCell {
             let price = transaction.total!
             self.orderPrice.text = "Rp. \(price)"
             
-            self.pickUpTime.text = transaction.pickUpTime?.time
+            self.pickUpTime.text = transaction.pickUpTime!
         }
     }
     @IBAction func foodReadyBtnPressed(_ sender: UIButton) {

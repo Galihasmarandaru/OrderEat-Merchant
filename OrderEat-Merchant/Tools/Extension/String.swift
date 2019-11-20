@@ -17,8 +17,8 @@ extension String {
         
         formatter.dateFormat = "HH:mm"
         
-        let string = formatter.string(from: date!)
+        //let string = formatter.string(from: date!)
         
-        return string
+        return self
     }
 }

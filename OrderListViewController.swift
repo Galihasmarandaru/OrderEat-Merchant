@@ -60,7 +60,11 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
         }
         
         viewModel.showAlertClosure = {
-            
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions(status: status)
+                }
+            }
         }
         
         viewModel.didFinishFetch = {
@@ -70,7 +74,6 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
             }
             
             DispatchQueue.main.async {
-                print("finish fetch")
                 self.tableView.reloadData()
                 self.tableView.refreshControl?.endRefreshing()
             }
@@ -84,6 +87,13 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
 //        appDelegate.first?.rootViewController = qrScanPage
         
         performSegue(withIdentifier: "toScannerView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toScannerView" {
+            let vc = segue.destination as! QRCodeScannerViewController
+            vc.parentVC = self
+        }
     }
 }
 

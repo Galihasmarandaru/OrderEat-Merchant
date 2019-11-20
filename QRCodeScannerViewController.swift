@@ -7,49 +7,95 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QRCodeScannerViewController: UIViewController {
+    
+  @IBOutlet weak var scannerView: QRScannerView! {
+        didSet {
+            scannerView.delegate = self
+        }
+    }
 
-      @IBOutlet weak var scannerView: QRScannerView! {
-            didSet {
-                scannerView.delegate = self
+    
+    var qrData: QRData? = nil {
+        didSet {
+            if qrData != nil {
+                attemptFetchTransaction(transactionId: qrData!.codeString!)
             }
         }
+    }
+    
+    let viewModel = QRScannerViewModel()
+    
+    var transaction : Transaction! {
+        didSet{
+            if transaction != nil {
+                DispatchQueue.main.async {
+                    let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "checkout") as! CheckoutViewController
+                    
+                    let parameter = ["status" : 4]
+                    APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
+                    
+                    self.transaction.status = 4
+                    vc.transaction = self.transaction
+                    
+                    self.parentVC.navigationController?.popViewController(animated: false)
+                    self.parentVC.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+    }
+    
+    var parentVC : OrderListViewController!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        var qrData: QRData? = nil {
-            didSet {
-                if qrData != nil {
-//                    self.performSegue(withIdentifier: "CheckOutOrderSegue", sender: self) //SEGUENYA BELOM DIBUAT
-                    print(qrData!)
+        scannerView.layer.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+    }
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+        if !scannerView.isRunning {
+            scannerView.startScanning()
+        }
+    }
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        if !scannerView.isRunning {
+            scannerView.stopScanning()
+        }
+    }
+    
+    func attemptFetchTransaction(transactionId id : String) {
+        viewModel.fetchTransactionDetail(id: id)
+        
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactionDetail(id: id)
                 }
             }
         }
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+        viewModel.didFinishFetch = {
+            if let transaction = self.viewModel.transaction {
+                self.transaction = transaction
+            }
         }
-
+    }
     
-        
-     
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: false)
-
-            if !scannerView.isRunning {
-                scannerView.startScanning()
-            }
-        }
-   
-        
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: false)
-            if !scannerView.isRunning {
-                scannerView.stopScanning()
-            }
-        }
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -60,19 +106,15 @@ extension QRCodeScannerViewController:QRScannerViewDelegate {
     func qrScanningDidStop() {
         print("fail")
     }
-    
-        
-        func qrScanningDidFail() {
-            presentAlert(withTitle: "Error", message: "Scanning Failed. Please try again")
-        }
-        
-        func qrScanningSucceededWithCode(_ str: String?) {
-            self.qrData = QRData(codeString: str)
-        }
-        
-        
-        
+
+    func qrScanningDidFail() {
+        presentAlert(withTitle: "Error", message: "Scanning Failed. Please try again")
     }
+    
+    func qrScanningSucceededWithCode(_ str: String?) {
+        self.qrData = QRData(codeString: str)
+    }
+}
 
 extension QRCodeScannerViewController {
     

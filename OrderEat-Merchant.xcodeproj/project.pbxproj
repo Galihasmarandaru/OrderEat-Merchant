@@ -20,6 +20,7 @@
 		934DA39E2383DCCA007675B4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39D2383DCCA007675B4 /* APIRequest.swift */; };
 		934DA3A02383DD0C007675B4 /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39F2383DD0C007675B4 /* TransactionStatus.swift */; };
 		935A165C2383EC47001C1D4F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165B2383EC47001C1D4F /* String.swift */; };
+		935A16602384DF3B001C1D4F /* QRScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165F2384DF3B001C1D4F /* QRScannerViewModel.swift */; };
 		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
 		A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE4237E689D0076D4D9 /* Alert.swift */; };
 		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
@@ -83,6 +84,7 @@
 		934DA39D2383DCCA007675B4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		934DA39F2383DD0C007675B4 /* TransactionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
 		935A165B2383EC47001C1D4F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		935A165F2384DF3B001C1D4F /* QRScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewModel.swift; sourceTree = "<group>"; };
 		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3573CE4237E689D0076D4D9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				0A1C72FC237D203500832704 /* OrderListViewModel.swift */,
 				0A763578238253AD005E5B8C /* QRScannerView.swift */,
 				0A76357A238253BE005E5B8C /* GetLabel.swift */,
+				935A165F2384DF3B001C1D4F /* QRScannerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
 				934DA3A02383DD0C007675B4 /* TransactionStatus.swift in Sources */,
 				A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */,
+				935A16602384DF3B001C1D4F /* QRScannerViewModel.swift in Sources */,
 				935A165C2383EC47001C1D4F /* String.swift in Sources */,
 				A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
@@ -793,7 +797,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Merchant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -811,7 +815,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Merchant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
