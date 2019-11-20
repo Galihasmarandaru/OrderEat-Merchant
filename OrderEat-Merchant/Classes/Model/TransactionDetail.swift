@@ -28,11 +28,6 @@ class TransactionDetail : Codable {
         qty = try container.decodeIfPresent(Int.self, forKey: .qty)
     }
     
-    init(menu: Menu) {
-        self.menu = menu
-        self.qty = 0
-    }
-    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(transactionId, forKey: .transactionId)

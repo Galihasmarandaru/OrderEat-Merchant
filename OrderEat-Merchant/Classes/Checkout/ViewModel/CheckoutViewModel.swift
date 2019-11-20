@@ -10,9 +10,5 @@ import Foundation
 import UIKit
 
 struct CheckoutViewModel {
-    static func getDataMenuTransaction() -> [Menu] {
-        let cell: [Menu] = [Menu(name: "Burger", price: 20000), Menu(name: "Noodle", price: 25000), Menu(name: "Chicken", price: 15000)]
-        
-        return cell
-    }
+
 }

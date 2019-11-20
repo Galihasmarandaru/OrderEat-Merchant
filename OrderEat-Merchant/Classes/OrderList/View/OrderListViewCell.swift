@@ -17,6 +17,27 @@ class OrderListViewCell: UITableViewCell {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var foodisReadyButton: UIButton!
     
+    var foodReadyClosure : (() -> ())?
+    
+    var transaction: Transaction! {
+        didSet {
+            let customerName = transaction.customer!.name!
+            let customerPhone = transaction.customer!.phone!
+            self.customerDetails.text = "\(customerName) - \(customerPhone)"
+            self.orderStatus.text = transactionStatus[transaction.status!]
+            
+            let price = transaction.total!
+            self.orderPrice.text = "Rp. \(price)"
+            
+            self.pickUpTime.text = transaction.pickUpTime?.time
+        }
+    }
+    @IBAction func foodReadyBtnPressed(_ sender: UIButton) {
+        let parameter = ["status" : 3]
+        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+        
+        foodReadyClosure?()
+    }
 }
 
 

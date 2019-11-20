@@ -48,14 +48,6 @@ class Transaction : Codable{
         self.details = []
     }
     
-    init (id: String, pickUpTime: String, customer: String, total: Int, status: Int) {
-        self.id = id
-        self.pickUpTime = pickUpTime
-        self.customerId = customer //ini cuma buat dummy
-        self.total = total
-        self.status = status
-    }
-    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(customerId, forKey: .customerId)

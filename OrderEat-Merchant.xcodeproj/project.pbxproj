@@ -16,6 +16,10 @@
 		0A763579238253AD005E5B8C /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A763578238253AD005E5B8C /* QRScannerView.swift */; };
 		0A76357B238253BE005E5B8C /* GetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357A238253BE005E5B8C /* GetLabel.swift */; };
 		0A76357D238257A5005E5B8C /* QRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357C238257A5005E5B8C /* QRData.swift */; };
+		934DA39C2383DA52007675B4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39B2383DA52007675B4 /* CurrentUser.swift */; };
+		934DA39E2383DCCA007675B4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39D2383DCCA007675B4 /* APIRequest.swift */; };
+		934DA3A02383DD0C007675B4 /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39F2383DD0C007675B4 /* TransactionStatus.swift */; };
+		935A165C2383EC47001C1D4F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165B2383EC47001C1D4F /* String.swift */; };
 		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
 		A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE4237E689D0076D4D9 /* Alert.swift */; };
 		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
@@ -75,6 +79,10 @@
 		0A763578238253AD005E5B8C /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = SOURCE_ROOT; };
 		0A76357A238253BE005E5B8C /* GetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLabel.swift; sourceTree = SOURCE_ROOT; };
 		0A76357C238257A5005E5B8C /* QRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRData.swift; sourceTree = "<group>"; };
+		934DA39B2383DA52007675B4 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		934DA39D2383DCCA007675B4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		934DA39F2383DD0C007675B4 /* TransactionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
+		935A165B2383EC47001C1D4F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3573CE4237E689D0076D4D9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -153,10 +161,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		935A165A2383EC3D001C1D4F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				935A165B2383EC47001C1D4F /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A3895D40237D3A4100B44893 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				935A165A2383EC3D001C1D4F /* Extension */,
 				A3895D41237D3A5100B44893 /* Views */,
+				934DA39B2383DA52007675B4 /* CurrentUser.swift */,
+				934DA39D2383DCCA007675B4 /* APIRequest.swift */,
+				934DA39F2383DD0C007675B4 /* TransactionStatus.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -571,6 +591,7 @@
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
 				0A1C72EF237D03D400832704 /* OrderListViewCell.swift in Sources */,
 				A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */,
+				934DA39E2383DCCA007675B4 /* APIRequest.swift in Sources */,
 				0A76357B238253BE005E5B8C /* GetLabel.swift in Sources */,
 				CA754E4F237D2BC6005BAD6D /* OTP.swift in Sources */,
 				0A76357D238257A5005E5B8C /* QRData.swift in Sources */,
@@ -578,6 +599,7 @@
 				A3895D43237D3A6800B44893 /* CustomColor.swift in Sources */,
 				CA754E6E237E71C6005BAD6D /* CustomTextField.swift in Sources */,
 				CA754E6C237E719F005BAD6D /* SigninViewController.swift in Sources */,
+				934DA39C2383DA52007675B4 /* CurrentUser.swift in Sources */,
 				CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */,
 				A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */,
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
@@ -592,7 +614,9 @@
 				0A763579238253AD005E5B8C /* QRScannerView.swift in Sources */,
 				CA754E50237D2BC6005BAD6D /* TokenAPI.swift in Sources */,
 				0A1C72FD237D203500832704 /* OrderListViewModel.swift in Sources */,
+				934DA3A02383DD0C007675B4 /* TransactionStatus.swift in Sources */,
 				A3895D4F237D3DF000B44893 /* CheckoutViewModel.swift in Sources */,
+				935A165C2383EC47001C1D4F /* String.swift in Sources */,
 				A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */,
 				CAA601FE237BAFDC00EE4497 /* SceneDelegate.swift in Sources */,
 			);
@@ -760,7 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EX65DH5AM5;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "OrderEat-Merchant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -778,7 +802,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EX65DH5AM5;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "OrderEat-Merchant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
