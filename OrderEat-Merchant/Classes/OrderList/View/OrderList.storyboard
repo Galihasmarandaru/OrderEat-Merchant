@@ -12,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="OrderListView" title="Incoming" id="R82-wP-dtR" customClass="OrderListViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZx-A2-EQn">
-                        <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
+                        <rect key="frame" x="0.0" y="0.0" width="791" height="784"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-AU-Bgd">
@@ -127,7 +127,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8l-7y-hDb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Incoming" id="Hba-E0-oDg"/>
+                    <navigationItem key="navigationItem" title="Incoming" id="Hba-E0-oDg">
+                        <barButtonItem key="rightBarButtonItem" image="Scan QR " id="9Ef-Dq-TzW">
+                            <connections>
+                                <action selector="qrBtnPressed:" destination="R82-wP-dtR" id="xPs-ob-Y1k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="vsZ-AU-Bgd" id="PB6-cn-mYh"/>
                         <segue destination="uM4-yx-CyD" kind="show" identifier="toScannerView" id="aGk-hj-qfp"/>
@@ -303,6 +309,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Scan QR " width="26" height="26"/>
         <image name="chevron.left.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>

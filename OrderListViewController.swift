@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PusherSwift
 class OrderListViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,20 +24,34 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
+        
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
+            if event.data != nil {
+                 // you can parse the data as necessary
+                 // print(data)
+                print("trying refresh ongoing pagee")
+                self.attemptFetchTransactions()
+
+               }
+           })
+        PusherChannels.pusher.connect()
+        
+        setupRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        attemptFetchTransaction()
+        attemptFetchTransactions()
     }
     
     func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(attemptFetchTransaction), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
     
-    @objc func attemptFetchTransaction() {
+    @objc func attemptFetchTransactions() {
         let status : APIRequest.TransactionStatus
         
         switch transactionTitle.firstIndex(of: self.title!) {
@@ -80,20 +94,15 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
         }
     }
     
-    @objc func openCamera(){
-//        let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
-//        let qrScanPage = storyboard.instantiateViewController(identifier: "QRCodeScannerViewController") as! QRCodeScannerViewController
-//        let appDelegate = UIApplication.shared.windows
-//        appDelegate.first?.rootViewController = qrScanPage
-        
-        performSegue(withIdentifier: "toScannerView", sender: nil)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toScannerView" {
             let vc = segue.destination as! QRCodeScannerViewController
             vc.parentVC = self
         }
+    }
+    
+    @IBAction func qrBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toScannerView", sender: nil)
     }
 }
 
