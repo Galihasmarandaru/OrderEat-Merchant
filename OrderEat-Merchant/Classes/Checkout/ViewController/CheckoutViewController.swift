@@ -34,7 +34,7 @@ class CheckoutViewController: UIViewController {
         let customerPhone = transaction.customer!.phone!
         nameAndPhoneLabel.text = "\(customerName) - \(customerPhone)"
        
-        orderNoAndPickUpTimeLabel.text = "D-01 | \(transaction.pickUpTime?.time)"
+        orderNoAndPickUpTimeLabel.text = "D-01 | \(transaction.pickUpTime!.time)"
         dateLabel.text = "Date"
        
         details = transaction.details!

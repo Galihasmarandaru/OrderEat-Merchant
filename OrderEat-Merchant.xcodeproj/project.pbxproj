@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,11 +16,15 @@
 		0A763579238253AD005E5B8C /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A763578238253AD005E5B8C /* QRScannerView.swift */; };
 		0A76357B238253BE005E5B8C /* GetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357A238253BE005E5B8C /* GetLabel.swift */; };
 		0A76357D238257A5005E5B8C /* QRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76357C238257A5005E5B8C /* QRData.swift */; };
+		81AD3321E3DE6B2547E8E006 /* Pods_OrderEat_MerchantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20DD6BF537BCAB798F6148A /* Pods_OrderEat_MerchantTests.framework */; };
+		87001D0D227397216BE2510D /* Pods_OrderEat_Merchant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D5AD1D8854C792066CBE4D /* Pods_OrderEat_Merchant.framework */; };
 		934DA39C2383DA52007675B4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39B2383DA52007675B4 /* CurrentUser.swift */; };
 		934DA39E2383DCCA007675B4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39D2383DCCA007675B4 /* APIRequest.swift */; };
 		934DA3A02383DD0C007675B4 /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA39F2383DD0C007675B4 /* TransactionStatus.swift */; };
 		935A165C2383EC47001C1D4F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165B2383EC47001C1D4F /* String.swift */; };
 		935A16602384DF3B001C1D4F /* QRScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165F2384DF3B001C1D4F /* QRScannerViewModel.swift */; };
+		93AA9A322386384200B98AF4 /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA9A312386384200B98AF4 /* PusherBeams.swift */; };
+		93AA9A342386385C00B98AF4 /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA9A332386385C00B98AF4 /* PusherChannels.swift */; };
 		A3171737237D2ED500A27485 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3171736237D2ED500A27485 /* Checkout.storyboard */; };
 		A3573CE5237E689D0076D4D9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE4237E689D0076D4D9 /* Alert.swift */; };
 		A3895D3F237D332A00B44893 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3895D3E237D332A00B44893 /* CheckoutViewController.swift */; };
@@ -51,6 +55,7 @@
 		CAA60271237BD82E00EE4497 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60270237BD82E00EE4497 /* OrderList.storyboard */; };
 		CAA60273237BD83E00EE4497 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */; };
 		CAA60277237BD86000EE4497 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA60276237BD86000EE4497 /* Signin.storyboard */; };
+		D9DFF7B33DBE79A45C30D49D /* Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABD55AE4DBAE492BE659053 /* Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,11 +85,20 @@
 		0A763578238253AD005E5B8C /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = SOURCE_ROOT; };
 		0A76357A238253BE005E5B8C /* GetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLabel.swift; sourceTree = SOURCE_ROOT; };
 		0A76357C238257A5005E5B8C /* QRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRData.swift; sourceTree = "<group>"; };
+		0DF7B2FE0EBC757A960B5DD5 /* Pods-OrderEat-MerchantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-MerchantTests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-MerchantTests/Pods-OrderEat-MerchantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1ABD55AE4DBAE492BE659053 /* Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7BC0198C5260EF2E0CD0BB /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Merchant-OrderEat-MerchantUITests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Merchant-OrderEat-MerchantUITests/Pods-OrderEat-Merchant-OrderEat-MerchantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44D5AD1D8854C792066CBE4D /* Pods_OrderEat_Merchant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Merchant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FD73865B0CDFC5CF27C0DF9 /* Pods-OrderEat-MerchantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-MerchantTests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-MerchantTests/Pods-OrderEat-MerchantTests.release.xcconfig"; sourceTree = "<group>"; };
+		72D8ABB09CC1204AB934DDA4 /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Merchant-OrderEat-MerchantUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Merchant-OrderEat-MerchantUITests/Pods-OrderEat-Merchant-OrderEat-MerchantUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC059FC7DDB284B4F9A1108 /* Pods-OrderEat-Merchant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Merchant.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Merchant/Pods-OrderEat-Merchant.debug.xcconfig"; sourceTree = "<group>"; };
 		934DA39B2383DA52007675B4 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		934DA39D2383DCCA007675B4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		934DA39F2383DD0C007675B4 /* TransactionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
 		935A165B2383EC47001C1D4F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		935A165F2384DF3B001C1D4F /* QRScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewModel.swift; sourceTree = "<group>"; };
+		93AA9A312386384200B98AF4 /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
+		93AA9A332386385C00B98AF4 /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
 		A3171736237D2ED500A27485 /* Checkout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Checkout.storyboard; path = "OrderEat-Merchant/Classes/Checkout/View/Checkout.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3573CE4237E689D0076D4D9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A3895D3E237D332A00B44893 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +110,7 @@
 		A3895D4C237D3BE000B44893 /* FoodReadyButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReadyButtonTableViewCell.swift; sourceTree = "<group>"; };
 		A3895D4E237D3DF000B44893 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
 		A3895D50237D458400B44893 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		C20DD6BF537BCAB798F6148A /* Pods_OrderEat_MerchantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_MerchantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA754E47237D2BC6005BAD6D /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CA754E48237D2BC6005BAD6D /* OTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTP.swift; sourceTree = "<group>"; };
 		CA754E49237D2BC6005BAD6D /* TokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
@@ -121,6 +136,7 @@
 		CAA60270237BD82E00EE4497 /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		CAA60272237BD83E00EE4497 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		CAA60276237BD86000EE4497 /* Signin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signin.storyboard; sourceTree = "<group>"; };
+		CFB4FF5100141F8803C04A01 /* Pods-OrderEat-Merchant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Merchant.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Merchant/Pods-OrderEat-Merchant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87001D0D227397216BE2510D /* Pods_OrderEat_Merchant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81AD3321E3DE6B2547E8E006 /* Pods_OrderEat_MerchantTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DFF7B33DBE79A45C30D49D /* Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +190,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		994903F3F17275F0C0E71E12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FC059FC7DDB284B4F9A1108 /* Pods-OrderEat-Merchant.debug.xcconfig */,
+				CFB4FF5100141F8803C04A01 /* Pods-OrderEat-Merchant.release.xcconfig */,
+				72D8ABB09CC1204AB934DDA4 /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.debug.xcconfig */,
+				2C7BC0198C5260EF2E0CD0BB /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.release.xcconfig */,
+				0DF7B2FE0EBC757A960B5DD5 /* Pods-OrderEat-MerchantTests.debug.xcconfig */,
+				6FD73865B0CDFC5CF27C0DF9 /* Pods-OrderEat-MerchantTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A3895D40237D3A4100B44893 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +211,8 @@
 				934DA39B2383DA52007675B4 /* CurrentUser.swift */,
 				934DA39D2383DCCA007675B4 /* APIRequest.swift */,
 				934DA39F2383DD0C007675B4 /* TransactionStatus.swift */,
+				93AA9A312386384200B98AF4 /* PusherBeams.swift */,
+				93AA9A332386385C00B98AF4 /* PusherChannels.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -199,6 +233,8 @@
 				CAA60214237BAFDF00EE4497 /* OrderEat-MerchantTests */,
 				CAA6021F237BAFDF00EE4497 /* OrderEat-MerchantUITests */,
 				CAA601F9237BAFDC00EE4497 /* Products */,
+				994903F3F17275F0C0E71E12 /* Pods */,
+				DC4C4501B78628F2AC123388 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -453,6 +489,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		DC4C4501B78628F2AC123388 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D5AD1D8854C792066CBE4D /* Pods_OrderEat_Merchant.framework */,
+				1ABD55AE4DBAE492BE659053 /* Pods_OrderEat_Merchant_OrderEat_MerchantUITests.framework */,
+				C20DD6BF537BCAB798F6148A /* Pods_OrderEat_MerchantTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,9 +506,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA60225237BAFDF00EE4497 /* Build configuration list for PBXNativeTarget "OrderEat-Merchant" */;
 			buildPhases = (
+				190C3BE5483BC9E06DB753E7 /* [CP] Check Pods Manifest.lock */,
 				CAA601F4237BAFDC00EE4497 /* Sources */,
 				CAA601F5237BAFDC00EE4497 /* Frameworks */,
 				CAA601F6237BAFDC00EE4497 /* Resources */,
+				3531B79AA1B311B89A3802DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -477,6 +525,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA60228237BAFDF00EE4497 /* Build configuration list for PBXNativeTarget "OrderEat-MerchantTests" */;
 			buildPhases = (
+				2BC439B0649A1EBC9E19FCFB /* [CP] Check Pods Manifest.lock */,
 				CAA6020D237BAFDF00EE4497 /* Sources */,
 				CAA6020E237BAFDF00EE4497 /* Frameworks */,
 				CAA6020F237BAFDF00EE4497 /* Resources */,
@@ -495,9 +544,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA6022B237BAFDF00EE4497 /* Build configuration list for PBXNativeTarget "OrderEat-MerchantUITests" */;
 			buildPhases = (
+				49D98D896AF94F286FA74853 /* [CP] Check Pods Manifest.lock */,
 				CAA60218237BAFDF00EE4497 /* Sources */,
 				CAA60219237BAFDF00EE4497 /* Frameworks */,
 				CAA6021A237BAFDF00EE4497 /* Resources */,
+				E5B7E45A267CD18E45927711 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -582,6 +633,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		190C3BE5483BC9E06DB753E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-Merchant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BC439B0649A1EBC9E19FCFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-MerchantTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3531B79AA1B311B89A3802DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant/Pods-OrderEat-Merchant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant/Pods-OrderEat-Merchant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant/Pods-OrderEat-Merchant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49D98D896AF94F286FA74853 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-Merchant-OrderEat-MerchantUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5B7E45A267CD18E45927711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant-OrderEat-MerchantUITests/Pods-OrderEat-Merchant-OrderEat-MerchantUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant-OrderEat-MerchantUITests/Pods-OrderEat-Merchant-OrderEat-MerchantUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Merchant-OrderEat-MerchantUITests/Pods-OrderEat-Merchant-OrderEat-MerchantUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CAA601F4237BAFDC00EE4497 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -589,6 +743,7 @@
 			files = (
 				A3895D49237D3B4C00B44893 /* PickUpAndPaymentTableViewCell.swift in Sources */,
 				CA754E51237D2BC6005BAD6D /* Transaction.swift in Sources */,
+				93AA9A322386384200B98AF4 /* PusherBeams.swift in Sources */,
 				CA754E54237D2BC6005BAD6D /* Merchant.swift in Sources */,
 				0A1C72F1237D048B00832704 /* OrderListViewController.swift in Sources */,
 				CAA60206237BAFDC00EE4497 /* OrderEat_Merchant.xcdatamodeld in Sources */,
@@ -606,6 +761,7 @@
 				CA754E4E237D2BC6005BAD6D /* Customer.swift in Sources */,
 				A3895D45237D3B1900B44893 /* OrderedItemTableViewCell.swift in Sources */,
 				CA754E52237D2BC6005BAD6D /* Menu.swift in Sources */,
+				93AA9A342386385C00B98AF4 /* PusherChannels.swift in Sources */,
 				0A1C731C237E5FA300832704 /* MasterOrderListTableViewCell.swift in Sources */,
 				A3895D47237D3B3300B44893 /* PriceDetailsTableViewCell.swift in Sources */,
 				0A7635772382536B005E5B8C /* QRCodeScannerViewController.swift in Sources */,
@@ -785,6 +941,7 @@
 		};
 		CAA60226237BAFDF00EE4497 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC059FC7DDB284B4F9A1108 /* Pods-OrderEat-Merchant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -803,6 +960,7 @@
 		};
 		CAA60227237BAFDF00EE4497 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFB4FF5100141F8803C04A01 /* Pods-OrderEat-Merchant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -821,6 +979,7 @@
 		};
 		CAA60229237BAFDF00EE4497 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DF7B2FE0EBC757A960B5DD5 /* Pods-OrderEat-MerchantTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -843,6 +1002,7 @@
 		};
 		CAA6022A237BAFDF00EE4497 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FD73865B0CDFC5CF27C0DF9 /* Pods-OrderEat-MerchantTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -865,6 +1025,7 @@
 		};
 		CAA6022C237BAFDF00EE4497 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D8ABB09CC1204AB934DDA4 /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -885,6 +1046,7 @@
 		};
 		CAA6022D237BAFDF00EE4497 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7BC0198C5260EF2E0CD0BB /* Pods-OrderEat-Merchant-OrderEat-MerchantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

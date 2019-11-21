@@ -15,10 +15,12 @@ extension String {
         
         let date = formatter.date(from: self)
         
+        print(date)
+        
         formatter.dateFormat = "HH:mm"
         
-        //let string = formatter.string(from: date!)
+        let string = formatter.string(from: date!)
         
-        return self
+        return string
     }
 }
