@@ -31,19 +31,26 @@ class QRCodeScannerViewController: UIViewController {
     var transaction : Transaction! {
         didSet{
             if transaction != nil {
-                DispatchQueue.main.async {
-                    let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-                    let vc = storyboard.instantiateViewController(identifier: "checkout") as! CheckoutViewController
-                    
-                    let parameter = ["status" : 4]
-                    APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
-                    
-                    self.transaction.status = 4
-                    vc.transaction = self.transaction
-                    
-                    self.parentVC.navigationController?.popViewController(animated: false)
-                    self.parentVC.navigationController?.pushViewController(vc, animated: true)
+                print("Merchant ID: ", transaction.merchantId)
+                print("current ID: ", CurrentUser.id)
+                if transaction.merchantId == CurrentUser.id {
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "checkout") as! CheckoutViewController
+                        
+                        let parameter = ["status" : 4]
+                        APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
+                        
+                        self.transaction.status = 4
+                        vc.transaction = self.transaction
+                        
+                        self.parentVC.navigationController?.popViewController(animated: false)
+                        self.parentVC.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } else {
+                    Alert.showOKAlert(on: self, title: "Transaction is not found")
                 }
+                
             }
         }
     }

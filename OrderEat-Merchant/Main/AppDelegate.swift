@@ -13,6 +13,9 @@ import PushNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate {
+  
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -21,17 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate {
         PusherBeams.registerDeviceInterest(pushInterest: "global")
         
         // Pusher Channels
-         let options = PusherClientOptions(
-           host: .cluster("ap1")
-         )
-        PusherChannels.pusher = Pusher(
-           key: "6c1e137627b90e824011", // Ganti key
-           options: options
-         )
+        PusherChannels.initPusherChannel()
         PusherChannels.pusher.delegate = self
-        PusherChannels.channel = PusherChannels.pusher.subscribe(channelName: CurrentUser.id)
-        PusherChannels.pusher.connect()
-        print("push notif init done")
+        
+//        if Defaults.getUserLogin() {
+//
+//            CurrentUser.id = Defaults.getId()
+//            CurrentUser.accessToken = Defaults.getToken()
+//            PusherChannels.subscribePushChannel(channel: CurrentUser.id)
+//
+//            let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
+//            let tabBarVC = storyboard.instantiateViewController(withIdentifier: "OrderListView")
+//            self.window =  UIWindow(frame: UIScreen.main.bounds)
+//            self.window?.rootViewController = tabBarVC
+//            self.window?.makeKeyAndVisible()
+//
+//
+//        }
         
         return true
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 final class CurrentUser {
-    static var id = "97500b01-c946-4fbb-bb4f-b9870bbc45fd"
+    static var id = ""
     static var name = "Kopong Bolbi"
     static var accessToken: String = ""
 }

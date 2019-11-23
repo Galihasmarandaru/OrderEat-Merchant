@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8gz-LW-9sm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8gz-LW-9sm">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Checkout View Controller-->
         <scene sceneID="vMJ-ZM-EET">
             <objects>
-                <viewController storyboardIdentifier="checkout" id="8gz-LW-9sm" customClass="CheckoutViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkout" id="8gz-LW-9sm" customClass="CheckoutViewController" customModule="Eativa_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQZ-xY-nGL">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="20" y="150" width="1072" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="137" id="s34-wj-Xsu" customClass="OrderedItemTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="137" id="s34-wj-Xsu" customClass="OrderedItemTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1072" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s34-wj-Xsu" id="s4a-zH-6Jq">
@@ -111,7 +111,7 @@
                                             <outlet property="itemQtyLabel" destination="Fvw-Nu-peV" id="aaS-CM-Lmo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDetailsTableViewCell" rowHeight="45" id="4Zo-FJ-okA" customClass="PriceDetailsTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDetailsTableViewCell" rowHeight="45" id="4Zo-FJ-okA" customClass="PriceDetailsTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="165" width="1072" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Zo-FJ-okA" id="24w-MN-s8l">
@@ -145,7 +145,7 @@
                                             <outlet property="rightLabel" destination="Vfc-pl-dpD" id="lr9-WY-ZnE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pickUpAndPaymentTableViewCell" rowHeight="70" id="aQ9-2V-pa7" customClass="PickUpAndPaymentTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pickUpAndPaymentTableViewCell" rowHeight="70" id="aQ9-2V-pa7" customClass="PickUpAndPaymentTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="1072" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aQ9-2V-pa7" id="sBI-eZ-ItC">
@@ -181,7 +181,7 @@
                                             <outlet property="rightLabel" destination="8Zz-Vd-3xi" id="DMh-so-Lg4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="acceptDeclineButtonTableViewCell" rowHeight="60" id="K6c-vn-YQY" customClass="AcceptDeclineButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="acceptDeclineButtonTableViewCell" rowHeight="60" id="K6c-vn-YQY" customClass="AcceptDeclineButtonTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="280" width="1072" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6c-vn-YQY" id="jSg-z4-ISJ">
@@ -196,7 +196,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="acceptButtonClicked:" destination="8gz-LW-9sm" eventType="touchUpInside" id="l0V-9z-0oh"/>
+                                                        <action selector="acceptBtnPressed:" destination="8gz-LW-9sm" eventType="touchUpInside" id="vTb-0y-hhi"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-IF-DTN">
@@ -207,7 +207,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="declineButtonClicked:" destination="8gz-LW-9sm" eventType="touchUpInside" id="9Lm-0a-1gZ"/>
+                                                        <action selector="declineBtnPressed:" destination="8gz-LW-9sm" eventType="touchUpInside" id="BVP-1H-YD3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -224,7 +224,7 @@
                                             <outlet property="declineButton" destination="yi5-IF-DTN" id="3mF-9Z-zBI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="65" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodReadyButtonTableViewCell" rowHeight="65" id="fdK-H7-q2q" customClass="FoodReadyButtonTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="340" width="1072" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fdK-H7-q2q" id="oid-G2-4iL">

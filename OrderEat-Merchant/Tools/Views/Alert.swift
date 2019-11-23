@@ -35,4 +35,15 @@ struct Alert {
             vc.present(alert, animated: true)
         }
     }
+    static func showOKAlert(on vc: UIViewController, title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            vc.dismiss(animated: true, completion: nil)
+        }))
+        
+        DispatchQueue.main.async {
+            vc.present(alert, animated: true)
+        }
+    }
 }

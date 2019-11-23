@@ -15,6 +15,16 @@ final class PusherChannels: PusherDelegate {
     static var pusher: Pusher!
     static var channel: PusherChannel!
     
+    class func initPusherChannel() {
+           let options = PusherClientOptions(
+              host: .cluster("ap1")
+            )
+           self.pusher = Pusher(
+              key: "6c1e137627b90e824011",
+              options: options
+            )
+       }
+    
     class func subscribePushChannel(channel: String) {
         // subscribe to channel
         self.channel = pusher.subscribe(channelName: channel)
@@ -24,4 +34,11 @@ final class PusherChannels: PusherDelegate {
 
     }
     
+    class func removePushChannel(channel : String) {
+        self.pusher.unsubscribe(channel);
+    }
+    
+    class func disconnect() {
+        self.pusher.disconnect()
+    }
 }

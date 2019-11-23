@@ -32,6 +32,12 @@ class OrderListViewCell: UITableViewCell {
             self.pickUpTime.text = transaction.pickUpTime!.time
         }
     }
+    
+    @IBAction func acceptBtnPressed(_ sender: Any) {
+        let parameter = ["status" : 1]
+        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+    }
+    
     @IBAction func foodReadyBtnPressed(_ sender: UIButton) {
         let parameter = ["status" : 3]
         APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
