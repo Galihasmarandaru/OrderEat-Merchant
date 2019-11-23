@@ -1,9 +1,9 @@
 //
-//  CopyLabel.swift
-//  QRScanner
+//  QRScannerViewModel.swift
+//  OrderEat-Merchant
 //
-//  Created by KM, Abhilash a on 15/03/19.
-//  Copyright © 2019 KM, Abhilash. All rights reserved.
+//  Created by Frederic Orlando on 20/11/19.
+//  Copyright © 2019 Galih Asmarandaru. All rights reserved.
 //
 
 import UIKit

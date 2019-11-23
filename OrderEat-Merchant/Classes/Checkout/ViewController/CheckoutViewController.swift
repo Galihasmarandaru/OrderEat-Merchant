@@ -16,7 +16,7 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkoutTableView: UITableView!
     
-    var orderNumber : String!
+    var orderNumber = "D-01"
     
     var transaction : Transaction!
     
@@ -34,7 +34,7 @@ class CheckoutViewController: UIViewController {
         let customerPhone = transaction.customer!.phone!
         nameAndPhoneLabel.text = "\(customerName) - \(customerPhone)"
        
-        orderNoAndPickUpTimeLabel.text = "D-01 | \(transaction.pickUpTime!.time)"
+        orderNoAndPickUpTimeLabel.text = "\(orderNumber) | \(transaction.pickUpTime!.time)"
         dateLabel.text = "Date"
        
         details = transaction.details!
@@ -47,24 +47,26 @@ class CheckoutViewController: UIViewController {
         checkoutTableView.tableFooterView = UIView()
     }
     
-    @IBAction func declineButtonClicked(_ sender: Any) {
-        // do something is decline button is clicked
+    @IBAction func acceptBtnPressed(_ sender: Any) {
+        let parameter = ["status" : 1]
+        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
     }
     
-    @IBAction func acceptButtonClicked(_ sender: Any) {
-        // do something is accept button is clicked
+    @IBAction func declineBtnPressed(_ sender: Any) {
+        let parameter = ["status" : 6]
+        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
     }
     
     @IBAction func foodReadyButtonClicked(_ sender: Any) {
         // do something is food ready button is clicked
         Alert.showBasicAlert(on: self, with: "Confirm Process", message: "Are you sure Order No: " + orderNumber + " is done and ready to be picked up?", yesAction: {
-            self.alertActionYesClicked()
+            let parameter = ["status" : 3]
+            APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
         })
     }
     
     func alertActionYesClicked() {
-        let parameter = ["status" : 3]
-        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+        
     }
 }
 

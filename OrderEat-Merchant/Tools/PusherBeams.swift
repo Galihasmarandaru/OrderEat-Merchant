@@ -20,7 +20,7 @@ final class PusherBeams {
         pushNotifications.start(instanceId: instanceId)
         pushNotifications.registerForRemoteNotifications()
         
-        if ( !CurrentUser.id.isEmpty ) {
+        if ( CurrentUser.id != "" ) {
             registerDeviceInterest(pushInterest: CurrentUser.id)
         }
         print("push notif init done")

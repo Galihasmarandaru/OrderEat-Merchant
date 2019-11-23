@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bii-T1-EZb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bii-T1-EZb">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,15 +10,15 @@
         <!--Incoming-->
         <scene sceneID="Bjb-fk-ZBD">
             <objects>
-                <viewController storyboardIdentifier="OrderListView" title="Incoming" id="R82-wP-dtR" customClass="OrderListViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderListView" title="Incoming" id="R82-wP-dtR" customClass="OrderListViewController" customModule="Eativa_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZx-A2-EQn">
-                        <rect key="frame" x="0.0" y="0.0" width="791" height="784"/>
+                        <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-AU-Bgd">
                                 <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="150" id="oSM-uS-UC2" customClass="OrderListViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="150" id="oSM-uS-UC2" customClass="OrderListViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="761.5" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oSM-uS-UC2" id="xnW-fQ-nYH">
@@ -146,13 +146,13 @@
         <!--Item-->
         <scene sceneID="bt5-Ua-iEM">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="wAr-7o-jDu" customClass="MasterOrderListTableViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="wAr-7o-jDu" customClass="MasterOrderListTableViewController" customModule="Eativa_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FrT-d3-owQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="1sb-o9-BiH" customClass="MasterOrderListTableViewCell" customModule="OrderEat_Merchant" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="1sb-o9-BiH" customClass="MasterOrderListTableViewCell" customModule="Eativa_Merchant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sb-o9-BiH" id="yGj-0m-upK">
@@ -165,7 +165,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXu-mk-wbM">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXu-mk-wbM">
                                             <rect key="frame" x="264" y="9.5" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="FHT-gp-zI1"/>
@@ -227,7 +227,7 @@
         <!--Split View Controller-->
         <scene sceneID="y0O-3l-j7e">
             <objects>
-                <splitViewController id="Bii-T1-EZb" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="OrderList" id="Bii-T1-EZb" sceneMemberID="viewController">
                     <connections>
                         <segue destination="LRh-iZ-rSm" kind="relationship" relationship="masterViewController" id="Rx3-1v-DJE"/>
                         <segue destination="kXL-Ci-cNx" kind="relationship" relationship="detailViewController" id="9Xc-Aq-hoi"/>
@@ -258,12 +258,12 @@
         <!--Code Scanner View Controller-->
         <scene sceneID="cCi-3y-THk">
             <objects>
-                <viewController storyboardIdentifier="QRCodeScannerViewController" id="uM4-yx-CyD" customClass="QRCodeScannerViewController" customModule="OrderEat_Merchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeScannerViewController" id="uM4-yx-CyD" customClass="QRCodeScannerViewController" customModule="Eativa_Merchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsO-1g-Pqu">
                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-xg-BoQ" customClass="QRScannerView" customModule="OrderEat_Merchant" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-xg-BoQ" customClass="QRScannerView" customModule="Eativa_Merchant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="791.5" height="784"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-o4-Qce">

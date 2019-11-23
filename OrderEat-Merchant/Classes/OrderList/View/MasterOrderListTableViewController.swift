@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PusherSwift
 
 class MasterOrderListTableViewController: UITableViewController {
     let cellLabel = [["Incoming","Waiting Payment","Ongoing","History"], ["Menu","Discount"]]
@@ -19,6 +20,19 @@ class MasterOrderListTableViewController: UITableViewController {
         let indexPath = IndexPath(row: 0, section: 0)
         
         tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            if let data = event.data {
+
+                // get transaction where have not completed -> one get request
+                // incoming 0, waiting for payment 1, ongoing 2 3, history 4 5 6 -> create new nodejs func
+                // refresh the UIView, replace the badge number
+
+               }
+           })
+        PusherChannels.pusher.connect()
+        
     }
 
     // MARK: - Table view data source
@@ -39,7 +53,8 @@ class MasterOrderListTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MasterOrderListTableViewCell
+                    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MasterOrderListTableViewCell
         let section = indexPath.section
         let row = indexPath.row
         

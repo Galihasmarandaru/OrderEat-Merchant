@@ -35,6 +35,7 @@ class Transaction : Codable{
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
         self.customer = try container.decodeIfPresent(Customer.self, forKey: .customer)
+        self.merchantId = try container.decodeIfPresent(String.self, forKey: .merchantId)
         self.merchant = try container.decodeIfPresent(Merchant.self, forKey: .merchant)
         self.pickUpTime = try container.decodeIfPresent(String.self, forKey: .pickUpTime)
         self.total = try container.decodeIfPresent(Int.self, forKey: .total)

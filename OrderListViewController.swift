@@ -25,9 +25,16 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
+                
+        setupRefreshControl()
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        attemptFetchTransactions()
         
         // bind a callback to handle an event
-        let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             if event.data != nil {
                  // you can parse the data as necessary
                  // print(data)
@@ -37,12 +44,10 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
                }
            })
         PusherChannels.pusher.connect()
-        
-        setupRefreshControl()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        attemptFetchTransactions()
+    override func viewWillDisappear(_ animated: Bool) {
+        PusherChannels.pusher.disconnect()
     }
     
     func setupRefreshControl() {

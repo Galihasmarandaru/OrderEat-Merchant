@@ -41,6 +41,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data // offline
@@ -79,6 +80,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -128,6 +130,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -166,6 +169,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -229,6 +233,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -268,6 +273,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -288,5 +294,54 @@ final class APIRequest {
         }
         
         task.resume()
+    }
+    
+    class func signin(parameter body: [String:Any], completion: @escaping (Bool?, Error?) -> Void) {
+        let url = URL(string: api + "/merchant/signin")
+        var request = URLRequest(url: url!)
+        
+        request.httpMethod = "POST"
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: [])
+        request.httpBody = jsonData!
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, let data = data
+                else {
+                    completion(nil, .offline)
+                    return
+            }
+            
+            switch(response.statusCode) {
+            case 200:
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+
+                PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+                PusherChannels.pusher.unsubscribeAll()
+                
+                let token = jsonData!["access_token"]!
+                let id  = jsonData!["id"]!
+                
+                CurrentUser.id = id
+                CurrentUser.accessToken = token
+                
+                Defaults.clearUserData()
+                Defaults.saveUserLogin(true)
+                Defaults.saveMerchantData(token: token, id: id)
+                
+                completion(true, nil)
+                
+            case 400:
+                completion(nil, .badRequest)
+            default:
+                completion(nil, .invalidData)
+                
+            }
+        }
+        
+        task.resume()
+        
     }
 }
