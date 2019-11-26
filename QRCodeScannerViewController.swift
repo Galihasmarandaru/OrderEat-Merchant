@@ -31,8 +31,8 @@ class QRCodeScannerViewController: UIViewController {
     var transaction : Transaction! {
         didSet{
             if transaction != nil {
-                print("Merchant ID: ", transaction.merchantId)
-                print("current ID: ", CurrentUser.id)
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
                 if transaction.merchantId == CurrentUser.id {
                     DispatchQueue.main.async {
                         let storyboard = UIStoryboard(name: "Checkout", bundle: nil)

@@ -35,7 +35,7 @@ class MasterOrderListTableViewController: UITableViewController {
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
-            if let data = event.data {
+            if event.data != nil {
                 self.attemptFetchTransactions()
             }
         })
@@ -67,7 +67,9 @@ class MasterOrderListTableViewController: UITableViewController {
             
             DispatchQueue.main.async {
                 self.tableView.reloadDataWithSelection()
-                //self.performSegue(withIdentifier: "changeDetails", sender: self.tableView.indexPathForSelectedRow)
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+
                 let selectedRow = self.tableView.indexPathForSelectedRow!.row
                 
                 self.detailViewController.transactions = self.transactions[selectedRow]

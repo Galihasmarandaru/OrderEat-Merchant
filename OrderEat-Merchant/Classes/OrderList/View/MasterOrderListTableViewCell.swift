@@ -19,8 +19,8 @@ class MasterOrderListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        accessoryBadge.textColor = .white
-        accessoryBadge.backgroundColor = .red
+        accessoryBadge.textColor = .black
+        accessoryBadge.backgroundColor = #colorLiteral(red: 0.8588235294, green: 0.8941176471, blue: 0.4392156863, alpha: 1)
         accessoryBadge.font = accessoryBadge.font.withSize(17)
         accessoryBadge.textAlignment = .center
         accessoryBadge.layer.cornerRadius = 15
