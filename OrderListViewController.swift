@@ -133,7 +133,6 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
         cell.transaction = transactions[indexPath.section]
         
         if transactions[indexPath.section].status == 2{
-            cell.foodisReadyButton.isHidden = false
             cell.foodReadyClosure = {[unowned self] in
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -141,7 +140,6 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
             }
             
         }else {
-            cell.foodisReadyButton.isHidden = true
         }
 
         return cell

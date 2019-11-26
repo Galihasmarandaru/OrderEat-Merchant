@@ -50,13 +50,6 @@ class CheckoutViewController: UIViewController {
     @IBAction func acceptBtnPressed(_ sender: Any) {
         let parameter = ["status" : 1]
         APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
-        let alert = UIAlertController(title: "Confirmation", message: "Are you sure want accept the order?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-
-    self.navigationController?.popViewController(animated: true)
-
-        })
-        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func declineBtnPressed(_ sender: Any) {
