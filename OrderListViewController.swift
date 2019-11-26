@@ -12,91 +12,14 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let transactionTitle = ["Incoming","Waiting Payment","Ongoing","History"]
-    
     let cellSpacingHeight: CGFloat = 10
-    
-    // Injection
-    let viewModel = OrderListViewModel()
     
     // Container
     var transactions : [Transaction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Scan QR "), style: .plain, target: self, action:#selector(openCamera))
-                
-        setupRefreshControl()
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        attemptFetchTransactions()
         
-        // bind a callback to handle an event
-        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
-            if event.data != nil {
-                 // you can parse the data as necessary
-                 // print(data)
-                print("trying refresh ongoing pagee")
-                self.attemptFetchTransactions()
-
-               }
-           })
-        PusherChannels.pusher.connect()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        PusherChannels.pusher.disconnect()
-    }
-    
-    func setupRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
-        tableView.refreshControl = refreshControl
-    }
-    
-    @objc func attemptFetchTransactions() {
-        let status : APIRequest.TransactionStatus
-        
-        switch transactionTitle.firstIndex(of: self.title!) {
-        case 0:
-            status = .incoming
-        case 1:
-            status = .waitForPayment
-        case 2:
-            status = .ongoing
-        case 3:
-            status = .history
-        default:
-            status = .incoming
-        }
-        
-        viewModel.fetchTransactions(status: status)
-        
-        viewModel.updateLoadingStatus = {
-            
-        }
-        
-        viewModel.showAlertClosure = {
-            if let errorString = self.viewModel.errorString {
-                Alert.showErrorAlert(on: self, title: errorString) {
-                    self.viewModel.fetchTransactions(status: status)
-                }
-            }
-        }
-        
-        viewModel.didFinishFetch = {
-            if let transactions = self.viewModel.transactions {
-                self.transactions = transactions
-                
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.tableView.refreshControl?.endRefreshing()
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

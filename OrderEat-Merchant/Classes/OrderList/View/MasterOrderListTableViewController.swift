@@ -10,31 +10,73 @@ import UIKit
 import PusherSwift
 
 class MasterOrderListTableViewController: UITableViewController {
-    let cellLabel = [["Incoming","Waiting Payment","Ongoing","History"], ["Menu","Discount"]]
+    let cellLabel = [transactionHeader, menuHeader]
+    
+    let viewModel = MasterOrderListViewModel()
+    
+    var transactions : [[Transaction]] = []
+    
+    var detailViewController : OrderListViewController! {
+        let detailNavigationController = splitViewController?.viewControllers[1] as! UINavigationController
+        return detailNavigationController.viewControllers.first as? OrderListViewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.title = CurrentUser.name
         self.title = CurrentUser.name
         
-        let indexPath = IndexPath(row: 0, section: 0)
+        attemptFetchTransactions()
         
+        // inital selected cell
+        let indexPath = IndexPath(row: 0, section: 0)
         tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             if let data = event.data {
-
-                // get transaction where have not completed -> one get request
-                // incoming 0, waiting for payment 1, ongoing 2 3, history 4 5 6 -> create new nodejs func
-                // refresh the UIView, replace the badge number
-
-               }
-           })
+                self.attemptFetchTransactions()
+            }
+        })
         PusherChannels.pusher.connect()
         
     }
-
+    
+    func attemptFetchTransactions() {
+        print("start fetch")
+        
+        viewModel.fetchTransactions()
+        
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions()
+                }
+            }
+        }
+        
+        viewModel.didFinishFetch = {
+            self.transactions = self.viewModel.transactions
+            
+            //print(self.transactions[0].count)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadDataWithSelection()
+                //self.performSegue(withIdentifier: "changeDetails", sender: self.tableView.indexPathForSelectedRow)
+                let selectedRow = self.tableView.indexPathForSelectedRow!.row
+                
+                self.detailViewController.transactions = self.transactions[selectedRow]
+                self.detailViewController.tableView.reloadData()
+            }
+        }
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,17 +97,20 @@ class MasterOrderListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MasterOrderListTableViewCell
+        
         let section = indexPath.section
         let row = indexPath.row
         
         cell.tipeLabel.text = cellLabel[section][row]
         
-        let cellBGView = UIView()
-        cellBGView.backgroundColor = #colorLiteral(red: 0.9647058824, green: 0.5215686275, blue: 0.1294117647, alpha: 1)
-        cell.selectedBackgroundView = cellBGView
-        cell.tipeLabel.highlightedTextColor = .white
-        cell.tipeNotifLabel.layer.backgroundColor  = #colorLiteral(red: 0.8588235294, green: 0.8941176471, blue: 0.4392156863, alpha: 1)
-        cell.tipeNotifLabel.layer.cornerRadius = 12
+        if transactions.count != 0 && section == 0 && transactions[row].count > 0{
+            cell.accessoryBadge.isHidden = false
+            cell.transactionCount = transactions[row].count
+        }
+        else
+        {
+            cell.accessoryBadge.isHidden = true
+        }
         
         return cell
     }
@@ -79,12 +124,12 @@ class MasterOrderListTableViewController: UITableViewController {
         let row = indexPath.row
         
         vc.title = cellLabel[section][row]
+        vc.transactions = self.transactions[row]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             performSegue(withIdentifier: "changeDetails", sender: indexPath)
         }
-        
     }
 }
