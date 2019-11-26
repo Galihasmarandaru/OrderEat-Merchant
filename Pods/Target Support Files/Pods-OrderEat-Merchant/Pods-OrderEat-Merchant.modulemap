@@ -1,0 +1,6 @@
+framework module Pods_OrderEat_Merchant {
+  umbrella header "Pods-OrderEat-Merchant-umbrella.h"
+
+  export *
+  module * { export * }
+}
