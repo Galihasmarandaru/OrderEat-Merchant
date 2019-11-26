@@ -18,11 +18,37 @@ final class APIRequest {
         case transactions = "/transaction/"
     }
     
-    enum TransactionStatus : String {
-        case incoming = "/incoming"
-        case waitForPayment = "/payment"
-        case ongoing = "/ongoing"
-        case history = "/history"
+    enum TransactionStatus : CaseIterable {
+        case incoming
+        case waitForPayment
+        case ongoing
+        case history
+        
+        var endpoint : String {
+            switch self {
+            case .incoming:
+                return "/incoming"
+            case .waitForPayment:
+                return "/payment"
+            case .ongoing:
+                return "/ongoing"
+            case .history:
+                return "/history"
+            }
+        }
+        
+        var index : Int {
+            switch self {
+            case .incoming:
+                return 0
+            case .waitForPayment:
+                return 1
+            case .ongoing:
+                return 2
+            case .history:
+                return 3
+            }
+        }
     }
     
     enum Error : String {
@@ -122,8 +148,8 @@ final class APIRequest {
         task.resume()
     }
     
-    class func getTransactions(merchantId: String, status: TransactionStatus, completion: @escaping ([Transaction]?, Error?) -> Void) {
-        let url = URL(string: api + "/merchant/" + merchantId + status.rawValue)!
+    class func getTransactions(status: TransactionStatus, completion: @escaping ([Transaction]?, Error?) -> Void) {
+        let url = URL(string: api + "/merchant/" + CurrentUser.id + status.endpoint)!
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"

@@ -10,6 +10,6 @@ import Foundation
 
 final class CurrentUser {
     static var id = ""
-    static var name = "Kopong Bolbi"
+    static var name = ""
     static var accessToken: String = ""
 }

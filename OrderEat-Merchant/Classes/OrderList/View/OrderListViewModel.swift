@@ -33,18 +33,18 @@ class OrderListViewModel{
     var didFinishFetch : (() -> ())?
 
     //Network call
-    func fetchTransactions(status : APIRequest.TransactionStatus) {
-        isLoading = true
-
-        APIRequest.getTransactions(merchantId: CurrentUser.id, status: status, completion: { (transactions, error) in
-            if let error = error {
-                self.errorString = error.rawValue
-                self.isLoading = false
-                return
-            }
-            self.errorString = nil
-            self.isLoading = false
-            self.transactions = transactions
-        })
-    }
+//    func fetchTransactions(status : APIRequest.TransactionStatus) {
+//        isLoading = true
+//
+//        APIRequest.getTransactions(merchantId: CurrentUser.id, status: status, completion: { (transactions, error) in
+//            if let error = error {
+//                self.errorString = error.rawValue
+//                self.isLoading = false
+//                return
+//            }
+//            self.errorString = nil
+//            self.isLoading = false
+//            self.transactions = transactions
+//        })
+//    }
 }
