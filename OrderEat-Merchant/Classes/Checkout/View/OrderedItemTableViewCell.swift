@@ -14,6 +14,7 @@ class OrderedItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemQtyLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
+    @IBOutlet weak var itemSubtotalLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +31,14 @@ class OrderedItemTableViewCell: UITableViewCell {
     var detail : TransactionDetail! {
         didSet {
             let menu = detail.menu!
+            let subtotal = menu.price! * detail.qty!
             
             self.itemImageView.image = UIImage(named: "Blackpepper Burger.png")
             self.itemNameLabel.text = menu.name
             self.itemQtyLabel.text = String(detail.qty!)
             self.itemPriceLabel.text = "Rp. \(menu.price!)"
+            
+            self.itemSubtotalLabel.text = "Rp. \(subtotal)"
         }
     }
 
