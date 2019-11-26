@@ -15,12 +15,15 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var nameAndPhoneLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkoutTableView: UITableView!
+    @IBOutlet weak var orderStatus: UILabel!
     
     var orderNumber = "D-01"
     
     var transaction : Transaction!
     
     var details : [TransactionDetail] = []
+    
+    var warna:[UIColor] = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1),#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1),.black,.red,.red]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,17 +47,26 @@ class CheckoutViewController: UIViewController {
         self.view.backgroundColor = .systemGray6
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
-        checkoutTableView.tableFooterView = UIView()
+//        checkoutTableView.tableFooterView = UIView()
+        checkoutTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: checkoutTableView.frame.size.width, height: 1))
+        self.orderStatus.textColor = warna[transaction.status!]
+        self.orderStatus.text = transactionStatus[transaction.status!]
     }
     
     @IBAction func acceptBtnPressed(_ sender: Any) {
-        let parameter = ["status" : 1]
-        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+        Alert.showBasicAlert(on: self, with: "Accept order", message: "Are you sure items on this order are available?", yesAction: {
+            let parameter = ["status" : 1]
+            APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @IBAction func declineBtnPressed(_ sender: Any) {
-        let parameter = ["status" : 6]
-        APIRequest.put(.transactions, id: transaction.id!, parameter: parameter)
+        Alert.showBasicAlert(on: self, with: "Decline order", message: "Are you sure you want to decline this order?", yesAction: {
+            let parameter = ["status" : 6]
+            APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @IBAction func foodReadyButtonClicked(_ sender: Any) {
@@ -62,12 +74,10 @@ class CheckoutViewController: UIViewController {
         Alert.showBasicAlert(on: self, with: "Confirm Process", message: "Are you sure Order No: " + orderNumber + " is done and ready to be picked up?", yesAction: {
             let parameter = ["status" : 3]
             APIRequest.put(.transactions, id: self.transaction.id!, parameter: parameter)
+            self.navigationController?.popViewController(animated: true)
         })
     }
     
-    func alertActionYesClicked() {
-        
-    }
 }
 
 extension CheckoutViewController: UITableViewDataSource, UITableViewDelegate {
