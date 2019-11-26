@@ -114,12 +114,12 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
 extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return transactions.count
     }
 
     // There is just one row in every section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactions.count
+        return 1
     }
 
     // Set the spacing between sections
@@ -130,10 +130,9 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrderListViewCell
         
-        cell.transaction = transactions[indexPath.row]
+        cell.transaction = transactions[indexPath.section]
         
-        if transactions[indexPath.row].status == 2{
-            cell.foodisReadyButton.isHidden = false
+        if transactions[indexPath.section].status == 2{
             cell.foodReadyClosure = {[unowned self] in
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -141,7 +140,6 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
             }
             
         }else {
-            cell.foodisReadyButton.isHidden = true
         }
 
         return cell
@@ -151,7 +149,7 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
         let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "checkout") as! CheckoutViewController
         
-        vc.transaction = transactions[indexPath.row]
+        vc.transaction = transactions[indexPath.section]
         
         navigationController?.pushViewController(vc, animated: true)
     }
