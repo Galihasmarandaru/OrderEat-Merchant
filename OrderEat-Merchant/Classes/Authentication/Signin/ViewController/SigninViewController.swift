@@ -11,8 +11,8 @@ import UIKit
 class SigninViewController: UIViewController {
     
     
-    @IBOutlet weak var emailTextField: CustomTextField!
-    @IBOutlet weak var passwordTextField: CustomTextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

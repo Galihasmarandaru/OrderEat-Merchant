@@ -45,6 +45,9 @@ class QRCodeScannerViewController: UIViewController {
                         vc.transaction = self.transaction
                         
                         self.parentVC.navigationController?.popViewController(animated: false)
+                        
+                        self.parentVC.masterViewController.tableView.selectRow(at: IndexPath(row: 2, section: 0), animated: false, scrollPosition: .none)
+                        
                         self.parentVC.navigationController?.pushViewController(vc, animated: true)
                     }
                 } else {

@@ -12,6 +12,10 @@ class OrderListViewController: UIViewController , UIImagePickerControllerDelegat
     
     @IBOutlet weak var tableView: UITableView!
     
+    var masterViewController : MasterOrderListTableViewController! {
+        return splitViewController?.viewControllers.first as! MasterOrderListTableViewController
+    }
+    
     let cellSpacingHeight: CGFloat = 10
     
     // Container
