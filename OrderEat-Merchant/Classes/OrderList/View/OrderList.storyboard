@@ -245,11 +245,22 @@
                                             <action selector="backButton:" destination="uM4-yx-CyD" eventType="touchUpInside" id="tJ6-pp-CJ0"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator QR" translatesAutoresizingMaskIntoConstraints="NO" id="LPe-IS-pDE">
+                                        <rect key="frame" x="276" y="272" width="240" height="240"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.85882352939999995" green="0.89411764709999997" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="LPe-IS-pDE" secondAttribute="height" multiplier="1:1" id="80d-Wy-LE5"/>
+                                            <constraint firstAttribute="width" constant="240" id="cg7-2f-MwV"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="nxX-o4-Qce" firstAttribute="leading" secondItem="KVC-xg-BoQ" secondAttribute="leading" constant="33" id="7uv-ba-RMN"/>
+                                    <constraint firstItem="LPe-IS-pDE" firstAttribute="centerY" secondItem="KVC-xg-BoQ" secondAttribute="centerY" id="DZK-ge-jYL"/>
                                     <constraint firstItem="nxX-o4-Qce" firstAttribute="top" secondItem="KVC-xg-BoQ" secondAttribute="top" constant="29" id="GJu-WU-IiJ"/>
+                                    <constraint firstItem="LPe-IS-pDE" firstAttribute="centerX" secondItem="KVC-xg-BoQ" secondAttribute="centerX" id="WyG-L1-kiy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -273,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Indicator QR" width="1493" height="1463"/>
         <image name="Scan QR " width="26" height="26"/>
         <image name="chevron.left.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
